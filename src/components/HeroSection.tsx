@@ -7,7 +7,16 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="hero" className="hero-section min-h-screen flex items-center">
+    <section 
+      id="hero" 
+      className="hero-section min-h-screen flex items-center relative"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/lovable-uploads/9d6e1dd3-da1a-40e8-a1c2-464fc8f85ba4.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8 animate-fade-in">

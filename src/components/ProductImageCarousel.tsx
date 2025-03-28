@@ -20,10 +20,12 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
     <div className="relative">
       <Carousel 
         className="w-full" 
-        onSelect={(api) => {
-          if (api) {
-            setCurrentIndex(api.selectedScrollSnap());
-          }
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        onSelect={(index) => {
+          setCurrentIndex(index);
         }}
       >
         <CarouselContent>
