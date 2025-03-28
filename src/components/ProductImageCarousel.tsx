@@ -24,8 +24,8 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
           align: "start",
           loop: true,
         }}
-        onSelect={(api) => {
-          setCurrentIndex(api);
+        onSelect={(index) => {
+          setCurrentIndex(index);
         }}
       >
         <CarouselContent>
