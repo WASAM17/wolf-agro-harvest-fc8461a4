@@ -31,6 +31,9 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
     };
   }, [emblaApi]);
 
+  // Pour le débogage
+  console.log("Images à afficher dans le carousel:", images);
+
   return (
     <div className="relative">
       <Carousel 
@@ -47,7 +50,11 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
                 <img
                   src={image}
                   alt={`${productName} - image ${index + 1}`}
-                  className="absolute w-full h-full object-contain md:object-cover"
+                  className="absolute w-full h-full object-contain"
+                  onError={(e) => {
+                    console.error(`Erreur de chargement de l'image: ${image}`);
+                    e.currentTarget.src = '/placeholder.svg'; // Image de substitution en cas d'erreur
+                  }}
                 />
               </div>
             </CarouselItem>

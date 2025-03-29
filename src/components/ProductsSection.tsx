@@ -14,6 +14,9 @@ interface Product {
 const ProductsSection = () => {
   const { t, language } = useLanguage();
 
+  // Ajout d'un log pour déboguer
+  console.log("Langue actuelle:", language);
+
   const products: Product[] = [
     {
       id: 'sesame',
@@ -41,6 +44,9 @@ const ProductsSection = () => {
     }
   ];
 
+  // Log pour déboguer
+  console.log("Images des produits:", products.map(p => p.image));
+
   return (
     <section id="products" className="py-20 bg-wolf-beige/50">
       <div className="container mx-auto px-4">
@@ -61,6 +67,10 @@ const ProductsSection = () => {
                   src={product.image} 
                   alt={product.name} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    console.error(`Erreur de chargement de l'image: ${product.image}`);
+                    e.currentTarget.src = '/placeholder.svg'; // Image de substitution en cas d'erreur
+                  }}
                 />
               </div>
               <div className="p-6">
