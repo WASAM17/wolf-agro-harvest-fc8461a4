@@ -12,8 +12,8 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8 animate-fade-in">
             <img
-              src="https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk="
-            width=auto
+              src="https://media.istockphoto.com/id/1144297220/photo/close-up-of-the-hands-of-an-african-farmer-weeding-lettuce-crops-with-an-improvised-iron-tool.jpg?s=612x612&w=0&k=20&c=NPz1n2mDBKXMW13Zqg3_DwkbWi2GnKt0XI_5gjq6BD8="
+              width=auto
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               Wolf Agro Services
             </h1>
