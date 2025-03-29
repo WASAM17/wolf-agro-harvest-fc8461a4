@@ -19,7 +19,7 @@ const NigerAgricultureSection = () => {
   };
   
   const farmingImages = [
-    '/lovable-uploads/2e0386af-6715-4efe-8924-e7b9c47bd206.png'
+    'https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk='
   ];
   
   const agriculturalAdvantages = {
