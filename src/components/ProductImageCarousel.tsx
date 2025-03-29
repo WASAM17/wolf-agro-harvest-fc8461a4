@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
 
 interface ProductImageCarouselProps {
   images: string[];
@@ -15,6 +16,20 @@ interface ProductImageCarouselProps {
 
 const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setCurrentIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi]);
 
   return (
     <div className="relative">
@@ -25,7 +40,7 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
           loop: true,
         }}
       >
-        <CarouselContent>
+        <CarouselContent ref={emblaRef}>
           {images.map((image, index) => (
             <CarouselItem key={index}>
               <div className="h-[300px] md:h-[400px] w-full relative">
