@@ -19,25 +19,25 @@ const ProductsSection = () => {
       id: 'sesame',
       name: t('sesame'),
       description: t('sesameDesc'),
-      image: '/lovable-uploads/de59e2e6-f3ca-4a5e-b079-513d91d0800f.png'
+      image: '/lovable-uploads/3.jpg'
     },
     {
       id: 'peanuts',
       name: t('peanuts'),
       description: t('peanutsDesc'),
-      image: '/lovable-uploads/8971920b-e7d8-4d6b-915a-b4165aa7e2bf.png'
+      image: '/lovable-uploads/4.jpg'
     },
     {
       id: 'gum-arabic',
       name: t('gumArabic'),
       description: t('gumArabicDesc'),
-      image: '/lovable-uploads/43c82632-32ae-411d-b626-9c35d3af6258.png'
+      image: '/lovable-uploads/5.jpg'
     },
     {
       id: 'purple-onion',
       name: t('onion'),
       description: t('onionDesc'),
-      image: '/lovable-uploads/8c8750b2-792f-442b-9442-33d05dc384c3.png'
+      image: '/lovable-uploads/6.jpg'
     }
   ];
 

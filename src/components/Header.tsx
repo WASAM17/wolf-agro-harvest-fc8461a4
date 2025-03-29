@@ -40,7 +40,7 @@ const Header = () => {
         <Link to="/" className="flex items-center">
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/56c33b24-91ad-43d9-8cc7-09a890551198.png" 
+              src="/lovable-uploads/1.jpg" 
               alt="Wolf Agro Services Logo" 
               className="h-12 w-auto mr-2"
             />
