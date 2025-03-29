@@ -8,56 +8,12 @@ import { useToast } from '@/components/ui/use-toast';
 import ProductImageCarousel from '@/components/ProductImageCarousel';
 import { Separator } from "@/components/ui/separator";
 
-// Define a consistent interface for all products
-interface ProductData {
-  id: string;
-  name: string;
-  description: string;
-  longDescription: {
-    fr: string;
-    en: string;
-    zh: string;
-  };
-  scientificInfo: {
-    fr: string;
-    en: string;
-    zh: string;
-  };
-  production: {
-    fr: string;
-    en: string;
-    zh: string;
-  };
-  storage: {
-    fr: string;
-    en: string;
-    zh: string;
-  };
-  benefits: {
-    fr: string[];
-    en: string[];
-    zh: string[];
-  };
-  applications: {
-    fr: string[];
-    en: string[];
-    zh: string[];
-  };
-  images: string[];
-  // Make varieties optional to handle products that don't have it
-  varieties?: {
-    fr: string[];
-    en: string[];
-    zh: string[];
-  };
-}
-
 const Product = () => {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useLanguage();
   const { toast } = useToast();
 
-  const products: Record<string, ProductData> = {
+  const products = {
     'sesame': {
       id: 'sesame',
       name: t('sesame'),
@@ -187,26 +143,6 @@ const Product = () => {
         en: "Scientific name: Allium cepa. Code: HS0703100000. Three categories of bulbs are produced: large (high water content), medium, and small. The main varieties are Violet de Galmi, Blanc de Galmi, and Blanc de Soumarana.",
         zh: "科学名称：洋葱。代码：HS0703100000。生产三类鳞茎：大（高含水量）、中和小。主要品种是加尔米紫洋葱、加尔米白洋葱和苏马拉纳白洋葱。"
       },
-      production: {
-        fr: "La production d'oignon au Niger est concentrée dans les régions de Tahoua et Agadez. Le Niger est l'un des plus grands producteurs d'oignons en Afrique de l'Ouest, avec une production annuelle dépassant 800 000 tonnes.",
-        en: "Onion production in Niger is concentrated in the Tahoua and Agadez regions. Niger is one of the largest onion producers in West Africa, with annual production exceeding 800,000 tons.",
-        zh: "尼日尔的洋葱生产集中在塔瓦和阿加德兹地区。尼日尔是西非最大的洋葱生产国之一，年产量超过80万吨。"
-      },
-      storage: {
-        fr: "Les équipements utilisés pour le stockage sont le « Rudu » en chaume (capacité 2,5 tonnes, durée 4-6 mois) et le « Docks » ou Adobe (capacité 12 tonnes, durée 4-6 mois). Le produit est conditionné dans des sacs recyclés de 100 à 120 kg en jute.",
-        en: "The equipment used for storage includes the thatched \"Rudu\" (capacity 2.5 tons, duration 4-6 months) and the \"Docks\" or Adobe (capacity 12 tons, duration 4-6 months). The product is packaged in recycled jute bags of 100 to 120 kg.",
-        zh: "用于储存的设备包括茅草\"Rudu\"（容量2.5吨，时间4-6个月）和\"Docks\"或Adobe（容量12吨，时间4-6个月）。产品包装在100至120公斤的回收黄麻袋中。"
-      },
-      benefits: {
-        fr: ["Riche en antioxydants", "Source de vitamines et minéraux", "Propriétés antibactériennes", "Aide à réguler la glycémie", "Favorise la digestion"],
-        en: ["Rich in antioxidants", "Source of vitamins and minerals", "Antibacterial properties", "Helps regulate blood sugar", "Promotes digestion"],
-        zh: ["富含抗氧化剂", "维生素和矿物质来源", "抗菌特性", "帮助调节血糖", "促进消化"]
-      },
-      applications: {
-        fr: ["Cuisine méditerranéenne", "Plats africains traditionnels", "Salades et condiments", "Produits déshydratés", "Purées et sauces"],
-        en: ["Mediterranean cuisine", "Traditional African dishes", "Salads and condiments", "Dehydrated products", "Purées and sauces"],
-        zh: ["地中海料理", "传统非洲菜肴", "沙拉和调味品", "脱水产品", "果泥和酱汁"]
-      },
       varieties: {
         fr: [
           "Violet de Galmi: excellente pour le stockage et la déshydratation (8-10% de matière sèche), forme épaisse et aplatie, peau et chair violettes, poids moyen de 150g.",
@@ -223,6 +159,21 @@ const Product = () => {
           "加尔米白洋葱：适合储存和新鲜食用（9-10%干物质），形状扁平，肉和皮呈白色，平均重量150-175克。",
           "苏马拉纳白洋葱：适合储存和脱水（超过10%干物质），形状扁平，肉和皮呈白色，重量100-200克。"
         ]
+      },
+      storage: {
+        fr: "Les équipements utilisés pour le stockage sont le « Rudu » en chaume (capacité 2,5 tonnes, durée 4-6 mois) et le « Docks » ou Adobe (capacité 12 tonnes, durée 4-6 mois). Le produit est conditionné dans des sacs recyclés de 100 à 120 kg en jute.",
+        en: "The equipment used for storage includes the thatched \"Rudu\" (capacity 2.5 tons, duration 4-6 months) and the \"Docks\" or Adobe (capacity 12 tons, duration 4-6 months). The product is packaged in recycled jute bags of 100 to 120 kg.",
+        zh: "用于储存的设备包括茅草\"Rudu\"（容量2.5吨，时间4-6个月）和\"Docks\"或Adobe（容量12吨，时间4-6个月）。产品包装在100至120公斤的回收黄麻袋中。"
+      },
+      benefits: {
+        fr: ["Riche en antioxydants", "Source de vitamines et minéraux", "Propriétés antibactériennes", "Aide à réguler la glycémie", "Favorise la digestion"],
+        en: ["Rich in antioxidants", "Source of vitamins and minerals", "Antibacterial properties", "Helps regulate blood sugar", "Promotes digestion"],
+        zh: ["富含抗氧化剂", "维生素和矿物质来源", "抗菌特性", "帮助调节血糖", "促进消化"]
+      },
+      applications: {
+        fr: ["Cuisine méditerranéenne", "Plats africains traditionnels", "Salades et condiments", "Produits déshydratés", "Purées et sauces"],
+        en: ["Mediterranean cuisine", "Traditional African dishes", "Salads and condiments", "Dehydrated products", "Purées and sauces"],
+        zh: ["地中海料理", "传统非洲菜肴", "沙拉和调味品", "脱水产品", "果泥和酱汁"]
       },
       images: [
         '/lovable-uploads/cd90b9c5-e7db-4be7-85f1-d320f9a6a895.png',
@@ -260,22 +211,23 @@ const Product = () => {
 
   // Additional product info based on product type
   const renderAdditionalInfo = () => {
-    // Only render varieties section if the product has varieties
-    if (product.id === 'purple-onion' && product.varieties) {
-      return (
-        <div className="mt-6">
-          <h2 className="text-xl font-semibold text-wolf-brown mb-3">
-            {language === 'fr' ? 'Variétés' : language === 'en' ? 'Varieties' : '品种'}:
-          </h2>
-          <ul className="list-disc list-inside mb-6 text-gray-600">
-            {product.varieties[currentLang].map((variety, index) => (
-              <li key={index} className="mb-3">{variety}</li>
-            ))}
-          </ul>
-        </div>
-      );
+    switch (product.id) {
+      case 'purple-onion':
+        return (
+          <div className="mt-6">
+            <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+              {language === 'fr' ? 'Variétés' : language === 'en' ? 'Varieties' : '品种'}:
+            </h2>
+            <ul className="list-disc list-inside mb-6 text-gray-600">
+              {product.varieties[currentLang].map((variety, index) => (
+                <li key={index} className="mb-3">{variety}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      default:
+        return null;
     }
-    return null;
   };
 
   return (

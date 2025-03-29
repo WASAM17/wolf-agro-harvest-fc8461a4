@@ -14,38 +14,32 @@ interface Product {
 const ProductsSection = () => {
   const { t, language } = useLanguage();
 
-  // Ajout d'un log pour déboguer
-  console.log("Langue actuelle:", language);
-
   const products: Product[] = [
     {
       id: 'sesame',
       name: t('sesame'),
       description: t('sesameDesc'),
-      image: '/lovable-uploads/470f4e75-0291-45d8-867d-8aab94b22211.png'
+      image: '/lovable-uploads/15f6c3d2-c002-4e0d-a66a-d97162db0d6b.png'
     },
     {
       id: 'peanuts',
       name: t('peanuts'),
       description: t('peanutsDesc'),
-      image: '/lovable-uploads/4.jpg'
+      image: '/lovable-uploads/6fa87dcc-cd1d-40c4-b45f-bbfd3c14f763.png'
     },
     {
       id: 'gum-arabic',
       name: t('gumArabic'),
       description: t('gumArabicDesc'),
-      image: '/lovable-uploads/5.jpg'
+      image: '/lovable-uploads/8122ba58-00ff-4347-a1d4-80e2dee11600.png'
     },
     {
       id: 'purple-onion',
       name: t('onion'),
       description: t('onionDesc'),
-      image: '/lovable-uploads/6.jpg'
+      image: '/lovable-uploads/cd90b9c5-e7db-4be7-85f1-d320f9a6a895.png'
     }
   ];
-
-  // Log pour déboguer
-  console.log("Images des produits:", products.map(p => p.image));
 
   return (
     <section id="products" className="py-20 bg-wolf-beige/50">
@@ -67,10 +61,6 @@ const ProductsSection = () => {
                   src={product.image} 
                   alt={product.name} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  onError={(e) => {
-                    console.error(`Erreur de chargement de l'image: ${product.image}`);
-                    e.currentTarget.src = '/placeholder.svg'; // Image de substitution en cas d'erreur
-                  }}
                 />
               </div>
               <div className="p-6">
