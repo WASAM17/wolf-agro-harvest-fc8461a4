@@ -80,7 +80,7 @@ const NigerAgricultureSection = () => {
             <div className="order-1 md:order-2">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src={farmingImages[0]} 
+                  src="https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk=" 
                   alt="Niger Agriculture" 
                   className="w-full h-auto object-cover"
                 />
