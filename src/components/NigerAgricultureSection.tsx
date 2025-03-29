@@ -19,7 +19,7 @@ const NigerAgricultureSection = () => {
   };
   
   const farmingImages = [
-    'https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk='
+    '/lovable-uploads/2e0386af-6715-4efe-8924-e7b9c47bd206.png'
   ];
   
   const agriculturalAdvantages = {
@@ -80,7 +80,7 @@ const NigerAgricultureSection = () => {
             <div className="order-1 md:order-2">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://media.istockphoto.com/id/1144297220/photo/close-up-of-the-hands-of-an-african-farmer-weeding-lettuce-crops-with-an-improvised-iron-tool.jpg?s=612x612&w=0&k=20&c=NPz1n2mDBKXMW13Zqg3_DwkbWi2GnKt0XI_5gjq6BD8="
+                  src="https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk=" 
                   alt="Niger Agriculture" 
                   className="w-full h-auto object-cover"
                 />
