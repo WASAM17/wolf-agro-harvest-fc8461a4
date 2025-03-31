@@ -1,38 +1,40 @@
-
 import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import ProductImageCarousel from './ProductImageCarousel';
 
-interface ProductImageCarouselProps {
-  images: string[];
-  productName: string;
-}
+const ProductPage = () => {
+  const products = [
+    {
+      name: 'Gomme arabique',
+      images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFDIWYyb2pQUo1G0SqUPXwzY6dAIspa74ZIw&s'],
+    },
+    {
+      name: 'Sésame',
+      images: ['https://nairametrics.com/wp-content/uploads/2018/07/sesame-seeds.jpg'],
+    },
+    {
+      name: 'Arachide',
+      images: ['https://www.planetesante.ch/var/ezdemo_site/storage/images/media/images/00-rubriques/nutrition-alimentation/allergies_arachide/33161-1-eng-GB/allergies_arachide_gallerylarge.jpg'],
+    },
+    {
+      name: 'Oignon',
+      images: ['https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'],
+    }
+  ];
 
-const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps) => {
   return (
-    <Carousel className="w-full">
-      <CarouselContent>
-        {images.map((image, index) => (
-          <CarouselItem key={index}>
-            <div className="h-[300px] md:h-[400px] w-full relative">
-              <img
-                src="https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk="
-                alt={`${productName} - image ${index + 1}`}
-                className="absolute w-full h-full object-cover"
-              />
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="left-2" />
-      <CarouselNext className="right-2" />
-    </Carousel>
+    <div className="space-y-10">
+      {products.map((product, idx) => (
+        <div key={idx}>
+          <h2 className="text-xl font-semibold mb-4">{product.name}</h2>
+          <ProductImageCarousel
+            images={product.images}
+            productName={product.name}
+          />
+        </div>
+      ))}
+    </div>
   );
 };
 
-export default ProductImageCarousel;
+export default ProductPage;
+
