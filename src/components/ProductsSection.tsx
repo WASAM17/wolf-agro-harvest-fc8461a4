@@ -19,7 +19,7 @@ const ProductsSection = () => {
       id: 'sesame',
       name: t('sesame'),
       description: t('sesameDesc'),
-      image: '/lovable-uploads/15f6c3d2-c002-4e0d-a66a-d97162db0d6b.png'
+      image: '/lovable-uploads/4fb92d2f-d47f-4150-a27e-7859c52497b3.png'
     },
     {
       id: 'peanuts',
