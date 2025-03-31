@@ -8,12 +8,67 @@ import { useToast } from '@/components/ui/use-toast';
 import ProductImageCarousel from '@/components/ProductImageCarousel';
 import { Separator } from "@/components/ui/separator";
 
+// Type pour assurer que toutes les propriétés nécessaires sont présentes
+interface ProductCommon {
+  id: string;
+  name: string;
+  description: string;
+  longDescription: {
+    fr: string;
+    en: string;
+    zh: string;
+  };
+  scientificInfo: {
+    fr: string;
+    en: string;
+    zh: string;
+  };
+  production: {
+    fr: string;
+    en: string;
+    zh: string;
+  };
+  storage: {
+    fr: string;
+    en: string;
+    zh: string;
+  };
+  benefits: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+  applications: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+  images: string[];
+}
+
+// Type pour les propriétés spécifiques au produit "purple-onion"
+interface OnionProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
+
+// Type union pour tous les produits
+type ProductType = ProductCommon | OnionProduct;
+
+// Fonction pour vérifier si un produit a des variétés (est de type OnionProduct)
+const hasVarieties = (product: ProductType): product is OnionProduct => {
+  return 'varieties' in product;
+};
+
 const Product = () => {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useLanguage();
   const { toast } = useToast();
 
-  const products = {
+  const products: Record<string, ProductType> = {
     'sesame': {
       id: 'sesame',
       name: t('sesame'),
@@ -165,6 +220,11 @@ const Product = () => {
         en: "The equipment used for storage includes the thatched \"Rudu\" (capacity 2.5 tons, duration 4-6 months) and the \"Docks\" or Adobe (capacity 12 tons, duration 4-6 months). The product is packaged in recycled jute bags of 100 to 120 kg.",
         zh: "用于储存的设备包括茅草\"Rudu\"（容量2.5吨，时间4-6个月）和\"Docks\"或Adobe（容量12吨，时间4-6个月）。产品包装在100至120公斤的回收黄麻袋中。"
       },
+      production: {
+        fr: "La production d'oignon au Niger est estimée à environ 750 000 tonnes par an, ce qui place le pays parmi les plus grands producteurs d'Afrique de l'Ouest. Les principales zones de production sont les régions de Tahoua, Agadez et Tillabéri.",
+        en: "Onion production in Niger is estimated at around 750,000 tons per year, making the country one of the largest producers in West Africa. The main production areas are the regions of Tahoua, Agadez, and Tillabéri.",
+        zh: "尼日尔的洋葱产量估计每年约为75万吨，使该国成为西非最大的生产国之一。主要产区是塔瓦、阿加德兹和蒂拉贝里地区。"
+      },
       benefits: {
         fr: ["Riche en antioxydants", "Source de vitamines et minéraux", "Propriétés antibactériennes", "Aide à réguler la glycémie", "Favorise la digestion"],
         en: ["Rich in antioxidants", "Source of vitamins and minerals", "Antibacterial properties", "Helps regulate blood sugar", "Promotes digestion"],
@@ -211,23 +271,21 @@ const Product = () => {
 
   // Additional product info based on product type
   const renderAdditionalInfo = () => {
-    switch (product.id) {
-      case 'purple-onion':
-        return (
-          <div className="mt-6">
-            <h2 className="text-xl font-semibold text-wolf-brown mb-3">
-              {language === 'fr' ? 'Variétés' : language === 'en' ? 'Varieties' : '品种'}:
-            </h2>
-            <ul className="list-disc list-inside mb-6 text-gray-600">
-              {product.varieties[currentLang].map((variety, index) => (
-                <li key={index} className="mb-3">{variety}</li>
-              ))}
-            </ul>
-          </div>
-        );
-      default:
-        return null;
+    if (hasVarieties(product)) {
+      return (
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+            {language === 'fr' ? 'Variétés' : language === 'en' ? 'Varieties' : '品种'}:
+          </h2>
+          <ul className="list-disc list-inside mb-6 text-gray-600">
+            {product.varieties[currentLang].map((variety, index) => (
+              <li key={index} className="mb-3">{variety}</li>
+            ))}
+          </ul>
+        </div>
+      );
     }
+    return null;
   };
 
   return (
