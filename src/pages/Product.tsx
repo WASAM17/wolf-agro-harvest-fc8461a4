@@ -103,9 +103,7 @@ const Product = () => {
         zh: ["烘焙和糕点", "烹饪油", "芝麻酱", "食品补充剂", "天然化妆品"]
       },
       images: [
-        '/lovable-uploads/4fb92d2f-d47f-4150-a27e-7859c52497b3.png',
-        '/lovable-uploads/15f6c3d2-c002-4e0d-a66a-d97162db0d6b.png',
-        '/lovable-uploads/2e0386af-6715-4efe-8924-e7b9c47bd206.png'
+        'https://nairametrics.com/wp-content/uploads/2018/07/sesame-seeds.jpg'
       ]
     },
     'peanuts': {

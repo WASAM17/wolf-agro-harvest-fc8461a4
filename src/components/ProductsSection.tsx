@@ -19,7 +19,7 @@ const ProductsSection = () => {
       id: 'sesame',
       name: t('sesame'),
       description: t('sesameDesc'),
-      image: '/lovable-uploads/4fb92d2f-d47f-4150-a27e-7859c52497b3.png'
+      image: 'https://nairametrics.com/wp-content/uploads/2018/07/sesame-seeds.jpg'
     },
     {
       id: 'peanuts',

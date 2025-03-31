@@ -24,6 +24,7 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
                 src={image}
                 alt={`${productName} - image ${index + 1}`}
                 className="absolute w-full h-full object-cover"
+                crossOrigin="anonymous"
               />
             </div>
           </CarouselItem>
