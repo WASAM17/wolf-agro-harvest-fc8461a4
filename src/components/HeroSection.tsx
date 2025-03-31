@@ -7,16 +7,16 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="hero" className="hero-section min-h-screen flex items-center">
+    <section 
+      id="hero" 
+      className="hero-section min-h-screen flex items-center bg-cover bg-center relative" 
+      style={{
+        backgroundImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk=')"
+      }}
+    >
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8 animate-fade-in">
-            <img
-              src="https://media.istockphoto.com/id/1144293808/photo/two-african-men-shaking-hands-near-an-agricultural-area-on-the-fertile-banks-of-niger-river.jpg?s=612x612&w=0&k=20&c=Hb4hLbXuhCjM6fgJkrEahxx5R0uCKu_XrCz-VhPGgxk="
-              width="auto"
-              alt="Hero image"
-              className="mb-4 rounded-lg mx-auto"
-            />
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               Wolf Agro Services
             </h1>
