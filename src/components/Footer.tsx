@@ -12,6 +12,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png" 
+                alt="Wolf Agro Services Logo" 
+                className="h-12 mr-2" 
+              />
               <span className="text-white text-2xl font-bold mr-1">WOLF</span>
               <span className="text-wolf-green font-bold">AGRO</span>
             </div>

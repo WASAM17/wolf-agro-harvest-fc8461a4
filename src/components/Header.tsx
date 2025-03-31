@@ -38,6 +38,11 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
+          <img 
+            src="/lovable-uploads/80dafe9d-b856-43df-af4f-f65a5bd6e3c5.png" 
+            alt="Wolf Agro Services Logo" 
+            className="h-12 mr-2" 
+          />
           <div className="flex items-center">
             <span className="text-wolf-brown text-2xl font-bold mr-1">WOLF</span>
             <span className="text-wolf-green font-bold">AGRO</span>
