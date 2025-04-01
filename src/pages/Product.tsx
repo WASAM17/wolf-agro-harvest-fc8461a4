@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -179,7 +180,7 @@ const Product = () => {
         zh: ["饮料中的稳定剂", "糖果中的包衣剂", "药片中的粘合剂", "化妆品中的乳化剂", "印刷油墨和粘合剂"]
       },
       images: [
-        '/lovable-uploads/8122ba58-00ff-4347-a1d4-80e2dee11600.png'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFDIWYyb2pQUo1G0SqUPXwzY6dAIspa74ZIw&s'
       ]
     },
     'purple-onion': {

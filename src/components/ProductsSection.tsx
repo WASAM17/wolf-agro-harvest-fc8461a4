@@ -31,7 +31,7 @@ const ProductsSection = () => {
       id: 'gum-arabic',
       name: t('gumArabic'),
       description: t('gumArabicDesc'),
-      image: '/lovable-uploads/8122ba58-00ff-4347-a1d4-80e2dee11600.png'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFDIWYyb2pQUo1G0SqUPXwzY6dAIspa74ZIw&s'
     },
     {
       id: 'purple-onion',
