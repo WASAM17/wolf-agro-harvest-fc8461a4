@@ -37,7 +37,7 @@ const ProductsSection = () => {
       id: 'purple-onion',
       name: t('onion'),
       description: t('onionDesc'),
-      image: '/lovable-uploads/cd90b9c5-e7db-4be7-85f1-d320f9a6a895.png'
+      image: 'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
     }
   ];
 

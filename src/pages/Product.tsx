@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -235,8 +234,7 @@ const Product = () => {
         zh: ["地中海料理", "传统非洲菜肴", "沙拉和调味品", "脱水产品", "果泥和酱汁"]
       },
       images: [
-        '/lovable-uploads/cd90b9c5-e7db-4be7-85f1-d320f9a6a895.png',
-        '/lovable-uploads/2e0386af-6715-4efe-8924-e7b9c47bd206.png'
+        'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
       ]
     }
   };
