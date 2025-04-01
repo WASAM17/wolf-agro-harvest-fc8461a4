@@ -25,7 +25,7 @@ const ProductsSection = () => {
       id: 'peanuts',
       name: t('peanuts'),
       description: t('peanutsDesc'),
-      image: '/lovable-uploads/6fa87dcc-cd1d-40c4-b45f-bbfd3c14f763.png'
+      image: 'https://www.planetesante.ch/var/ezdemo_site/storage/images/media/images/00-rubriques/nutrition-alimentation/allergies_arachide/33161-1-eng-GB/allergies_arachide_gallerylarge.jpg'
     },
     {
       id: 'gum-arabic',

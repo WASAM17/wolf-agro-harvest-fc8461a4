@@ -141,7 +141,7 @@ const Product = () => {
         zh: ["直接食用", "烹饪用花生油", "花生酱", "食品工业原料", "动物饲料"]
       },
       images: [
-        '/lovable-uploads/6fa87dcc-cd1d-40c4-b45f-bbfd3c14f763.png'
+        'https://www.planetesante.ch/var/ezdemo_site/storage/images/media/images/00-rubriques/nutrition-alimentation/allergies_arachide/33161-1-eng-GB/allergies_arachide_gallerylarge.jpg'
       ]
     },
     'gum-arabic': {
