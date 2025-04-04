@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -68,9 +69,17 @@ interface MangoProduct extends ProductCommon {
   };
 }
 
-type ProductType = ProductCommon | OnionProduct | OrangeProduct | MangoProduct;
+interface PlantainProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
 
-const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct | MangoProduct => {
+type ProductType = ProductCommon | OnionProduct | OrangeProduct | MangoProduct | PlantainProduct;
+
+const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct | MangoProduct | PlantainProduct => {
   return 'varieties' in product;
 };
 
@@ -357,6 +366,61 @@ const Product = () => {
       },
       images: [
         'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
+      ]
+    },
+    'west-african-plantain': {
+      id: 'west-african-plantain',
+      name: t('westAfricanPlantain'),
+      description: t('westAfricanPlantainDesc'),
+      longDescription: {
+        fr: "La banane plantain, appelée aussi \"banane farine\" ou \"banane à cuire\", est un incontournable de la cuisine africaine. Cultivée dans plusieurs régions d'Afrique de l'Ouest (notamment en Côte d'Ivoire, au Ghana, au Bénin et au Nigeria), elle est appréciée pour sa polyvalence, sa chair ferme et savoureuse, et sa richesse nutritionnelle. Qu'elle soit verte, jaune ou bien mûre, la banane plantain se cuisine de mille façons : frite, bouillie, en purée ou en chips. Grâce à des méthodes de culture respectueuses et une récolte manuelle, nous proposons une banane plantain de qualité premium, récoltée à maturité optimale et parfaitement adaptée à la consommation locale et à l'export.",
+        en: "Plantain, also called \"cooking banana\", is a staple of African cuisine. Grown in several regions of West Africa (especially in Ivory Coast, Ghana, Benin, and Nigeria), it is appreciated for its versatility, firm and flavorful flesh, and nutritional richness. Whether green, yellow, or fully ripe, plantain can be cooked in a thousand ways: fried, boiled, mashed, or as chips. Thanks to respectful cultivation methods and manual harvesting, we offer premium quality plantain, harvested at optimal maturity and perfectly suited for both local consumption and export.",
+        zh: "大蕉，又称"烹饪香蕉"，是非洲烹饪的主食。它在西非多个地区种植（特别是在科特迪瓦、加纳、贝宁和尼日利亚），因其多功能性、坚实可口的果肉和丰富的营养而受到赞赏。无论是绿色、黄色还是完全成熟，大蕉都可以以千种方式烹饪：炸、煮、捣碎或制成薯片。得益于尊重环境的种植方法和手工收获，我们提供优质的大蕉，在最佳成熟度收获，非常适合本地消费和出口。"
+      },
+      scientificInfo: {
+        fr: "Nom scientifique : Musa paradisiaca. Code douanier : HS0803909000. Type : banane à cuire (différente de la banane dessert). Poids moyen : 250–400 g par doigt. Stades de consommation : verte (riche en amidon), jaune (moelleuse), noire (douce et sucrée).",
+        en: "Scientific name: Musa paradisiaca. Customs code: HS0803909000. Type: cooking banana (different from dessert banana). Average weight: 250–400 g per finger. Consumption stages: green (starch-rich), yellow (soft), black (sweet).",
+        zh: "科学名称：大蕉。海关编码：HS0803909000。类型：烹饪香蕉（与甜点香蕉不同）。平均重量：每指250-400克。消费阶段：绿色（富含淀粉），黄色（软），黑色（甜）。"
+      },
+      varieties: {
+        fr: [
+          "Corne : très longue, jusqu'à 40 cm, idéale pour la friture, saveur douce une fois mûre.",
+          "Orishele : plus courte, chair dense, excellente en chips ou purée.",
+          "French : variété intermédiaire, polyvalente, bonne tenue à la cuisson."
+        ],
+        en: [
+          "Horn: very long, up to 40 cm, ideal for frying, sweet flavor when ripe.",
+          "Orishele: shorter, dense flesh, excellent for chips or puree.",
+          "French: intermediate variety, versatile, good cooking stability."
+        ],
+        zh: [
+          "角蕉：非常长，最长可达40厘米，适合油炸，成熟后味道甜美。",
+          "奥里谢尔：较短，肉质致密，非常适合制作薯片或果泥。",
+          "法式：中间品种，用途广泛，烹饪稳定性好。"
+        ]
+      },
+      production: {
+        fr: "La banane plantain est cultivée toute l'année dans des zones tropicales humides. La récolte se fait manuellement, à la main ou à la machette, lorsque les régimes atteignent leur pleine taille. Le stockage dépend du stade de maturité : verte (conservation longue, idéale pour l'export) ou jaune/noire (consommation rapide, locale ou transformation).",
+        en: "Plantain is grown year-round in humid tropical areas. Harvesting is done manually, by hand or machete, when bunches reach their full size. Storage depends on the maturity stage: green (long conservation, ideal for export) or yellow/black (quick consumption, local or processing).",
+        zh: "大蕉全年在湿热带地区种植。当香蕉束达到完全大小时，通过手工或砍刀收获。存储取决于成熟阶段：绿色（长期保存，适合出口）或黄色/黑色（快速消费，本地或加工）。"
+      },
+      storage: {
+        fr: "Conditionnement en régimes ou en cartons de 18–22 kg selon les destinations. Pour l'export, les bananes plantain vertes sont stockées dans des conteneurs réfrigérés entre 13-14°C avec une humidité contrôlée pour ralentir leur maturation.",
+        en: "Packaging in bunches or in 18–22 kg cartons depending on destinations. For export, green plantains are stored in refrigerated containers between 13-14°C with controlled humidity to slow down their ripening.",
+        zh: "根据目的地的不同，包装在束或18-22公斤的纸箱中。对于出口，绿色大蕉存放在13-14°C的冷藏集装箱中，湿度受控以减缓成熟过程。"
+      },
+      benefits: {
+        fr: ["Riche en potassium, magnésium et fibres", "Bonne source d'énergie (amidon complexe)", "Favorise une bonne digestion", "Sans gluten, adaptée aux régimes spécifiques", "Aide à la satiété"],
+        en: ["Rich in potassium, magnesium and fiber", "Good source of energy (complex starch)", "Promotes good digestion", "Gluten-free, suitable for specific diets", "Helps with satiety"],
+        zh: ["富含钾、镁和纤维", "良好的能量来源（复合淀粉）", "促进良好消化", "无麸质，适合特定饮食", "帮助饱腹感"]
+      },
+      applications: {
+        fr: ["Alloco (banane frite ivoirienne)", "Foufou de plantain", "Plantain braisé ou en ragoût", "Chips de banane plantain", "Purée ou galettes"],
+        en: ["Alloco (Ivorian fried plantain)", "Plantain fufu", "Braised plantain or stew", "Plantain chips", "Puree or patties"],
+        zh: ["阿洛科（科特迪瓦炸大蕉）", "大蕉糊糊", "炖大蕉或炖菜", "大蕉薯片", "果泥或饼"]
+      },
+      images: [
+        'https://www.shutterstock.com/image-photo/bunches-ripe-plantain-colombian-peasant-600nw-2499828565.jpg'
       ]
     }
   };
