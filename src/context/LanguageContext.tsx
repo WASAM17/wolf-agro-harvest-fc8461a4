@@ -91,6 +91,18 @@ const translations: Translations = {
     zh: '加尔米紫洋葱，以其独特的风味和长久的保存期而闻名。' 
   },
   
+  // New product - Marrakech Orange
+  marrakechOrange: { 
+    fr: 'Orange de Marrakech', 
+    en: 'Marrakech Orange', 
+    zh: '马拉喀什橙子' 
+  },
+  marrakechOrangeDesc: { 
+    fr: 'Oranges juteuses et sucrées de Marrakech, cultivées sous le soleil du Maroc avec un arôme floral unique.', 
+    en: 'Sweet and juicy oranges from Marrakech, grown under the Moroccan sun with a unique floral aroma.', 
+    zh: '来自马拉喀什的甜美多汁橙子，在摩洛哥阳光下种植，具有独特的花香。' 
+  },
+  
   // Contact Section
   contactTitle: { fr: 'Contactez-Nous', en: 'Contact Us', zh: '联系我们' },
   contactSub: { 
