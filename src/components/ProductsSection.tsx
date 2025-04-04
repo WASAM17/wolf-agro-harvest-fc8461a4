@@ -38,6 +38,12 @@ const ProductsSection = () => {
       name: t('onion'),
       description: t('onionDesc'),
       image: 'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
+    },
+    {
+      id: 'marrakech-orange',
+      name: t('marrakechOrange'),
+      description: t('marrakechOrangeDesc'),
+      image: 'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
     }
   ];
 

@@ -52,9 +52,17 @@ interface OnionProduct extends ProductCommon {
   };
 }
 
-type ProductType = ProductCommon | OnionProduct;
+interface OrangeProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
 
-const hasVarieties = (product: ProductType): product is OnionProduct => {
+type ProductType = ProductCommon | OnionProduct | OrangeProduct;
+
+const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct => {
   return 'varieties' in product;
 };
 
@@ -76,7 +84,7 @@ const Product = () => {
       scientificInfo: {
         fr: "Nom scientifique : Sesamum indicum. Principales variétés : sésame blanc, sésame brun, sésame bigaré. C'est une plante annuelle pouvant mesurer jusqu'à un mètre de hauteur avec un système racinaire tolérant à la sécheresse. Les sols limoneux acides sont ceux qui conviennent le mieux à sa culture, tandis que les sols alcalins et sableux lui sont impropres.",
         en: "Scientific name: Sesamum indicum. Main varieties: white sesame, brown sesame, variegated sesame. It is an annual plant that can measure up to one meter in height with a drought-tolerant root system. Acidic loamy soils are best suited for its cultivation, while alkaline and sandy soils are unsuitable.",
-        zh: "科学名称：芝麻属。主要品种：白芝麻、棕色芝麻、杂色芝麻。它是一种一年生植物，高度可达一米，根系耐旱。酸性壤土最适合其种植，而碱性和沙质土壤则不适合。"
+        zh: "科学名称：芝麻属。主要品种：白芝麻、棕色芝麻、杂色芝麻。它是一种��年生植物，高度可达一米，根系耐旱。酸性壤土最适合其种植，而碱性和沙质土壤则不适合。"
       },
       production: {
         fr: "La production est concentrée dans les régions de Maradi (principalement dans les départements de Tessaoua, Aguié et Gazaoua) et de Zinder (Magaria). Le potentiel exportable de sésame est estimé à une moyenne de 41.730 tonnes par an.",
@@ -109,7 +117,7 @@ const Product = () => {
       longDescription: {
         fr: "Les arachides du Niger sont cultivées dans les zones fertiles du pays et se distinguent par leur saveur riche et leur texture croquante. Notre processus de récolte et de séchage soigneux préserve leur qualité naturelle et leur valeur nutritionnelle. Nos arachides sont disponibles sous différentes formes : en coque, décortiquées, ou transformées en huile ou en pâte. Elles constituent une excellente source de protéines, de fibres et de graisses saines, ce qui en fait un aliment nutritif et polyvalent. Nous garantissons des produits exempts de contaminants et conformes aux normes internationales de sécurité alimentaire.",
         en: "Niger's peanuts are grown in the country's fertile areas and stand out for their rich flavor and crunchy texture. Our careful harvesting and drying process preserves their natural quality and nutritional value. Our peanuts are available in various forms: in-shell, shelled, or processed into oil or paste. They are an excellent source of protein, fiber, and healthy fats, making them a nutritious and versatile food. We guarantee products free from contaminants and compliant with international food safety standards.",
-        zh: "尼日尔的花生在该国肥沃的地区种植，以其丰富的味道和脆脆的质地而脱颖而出。我们精心的收获和干燥过程保留了它们的天然品质和营养价值。我们的花生有多种形式：带壳、去壳或加工成油或糊状。它们是蛋白质、纤维和健康脂肪的优秀来源，使其成为营养丰富且多用途的食品。我们保证产品不含污染物，符合国际食品安全标准。"
+        zh: "尼日尔的花生在该国肥沃的地区种植，以其丰富的味道和脆脆的质地而脱颖而出。我们精心的收获和干燥过程保留了它们的天然品质���营养价值。我们的花生有多种形式：带壳、去壳或加工成油或糊状。它们是蛋白质、纤维和健康脂肪的优秀来源，使其成为营养丰富且多用途的食品。我们保证产品不含污染物，符合国际食品安全标准。"
       },
       scientificInfo: {
         fr: "L'arachide est une plante de la famille des légumineuses, originaire d'Amérique du Sud, adaptée aux climats chauds. Elle produit des gousses souterraines contenant des graines comestibles riches en huile.",
@@ -231,6 +239,61 @@ const Product = () => {
       },
       images: [
         'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
+      ]
+    },
+    'marrakech-orange': {
+      id: 'marrakech-orange',
+      name: t('marrakechOrange'),
+      description: t('marrakechOrangeDesc'),
+      longDescription: {
+        fr: "L'orange de Marrakech, cultivée sous le soleil généreux du Maroc, est une variété prisée pour son goût intensément sucré, son arôme floral unique et sa chair juteuse. Issues des vergers fertiles de la région de Marrakech, ces oranges bénéficient d'un terroir exceptionnel, où climat et sol s'allient pour offrir un fruit d'une qualité remarquable. Douces, peu acides, et naturellement parfumées, elles sont parfaites aussi bien en jus qu'à croquer à pleines dents. Grâce à notre partenariat direct avec des agriculteurs locaux, nous garantissons des oranges fraîchement récoltées à maturité optimale, manipulées avec soin pour préserver toutes leurs qualités gustatives et nutritionnelles.",
+        en: "Marrakech orange, grown under Morocco's generous sun, is a prized variety known for its intensely sweet taste, unique floral aroma, and juicy flesh. From the fertile orchards of the Marrakech region, these oranges benefit from an exceptional terroir, where climate and soil combine to offer a fruit of remarkable quality. Sweet, low in acidity, and naturally fragrant, they are perfect for juicing or eating fresh. Thanks to our direct partnership with local farmers, we guarantee oranges freshly harvested at optimal maturity, handled with care to preserve all their taste and nutritional qualities.",
+        zh: "摩洛哥马拉喀什橙子，在摩洛哥慷慨的阳光下种植，以其浓郁甜美的口感、独特的花香和多汁的果肉而备受推崇。来自马拉喀什地区肥沃的果园，这些橙子得益于卓越的风土条件，气候和土壤结合提供了品质非凡的水果。甜美、低酸度、自然芳香，无论是榨汁还是新鲜食用都是完美的选择。得益于我们与当地农民的直接合作，我们保证橙子在最佳成熟度时新鲜采摘，精心处理以保留所有味道和营养品质。"
+      },
+      scientificInfo: {
+        fr: "Nom scientifique : Citrus sinensis. Code douanier : HS0805102200. Variétés principales : Maroc Late (idéale pour le jus), Navel (à chair fondante), Salustiana (très sucrée, sans pépins). Poids moyen : 150–250 g selon la variété. Teneur en jus : entre 45 et 55 %.",
+        en: "Scientific name: Citrus sinensis. Customs code: HS0805102200. Main varieties: Maroc Late (ideal for juice), Navel (with melting flesh), Salustiana (very sweet, seedless). Average weight: 150–250 g depending on the variety. Juice content: between 45 and 55%.",
+        zh: "科学名称：甜橙。海关编码：HS0805102200。主要品种：摩洛哥晚熟（适合榨汁），纳维尔（肉质软），萨鲁斯蒂亚娜（非常甜，无籽）。平均重量：根据品种150-250克。果汁含量：45-55%之间。"
+      },
+      varieties: {
+        fr: [
+          "Maroc Late : excellente pour le jus, récoltée de février à mai, fruit sphérique, peau fine, chair très juteuse.",
+          "Navel de Marrakech : idéale pour la consommation fraîche, récoltée de novembre à février, chair douce et fondante, sans pépins.",
+          "Salustiana : à la fois juteuse et sucrée, récoltée de décembre à mars, peau fine, peu d'acidité."
+        ],
+        en: [
+          "Maroc Late: excellent for juice, harvested from February to May, spherical fruit, thin skin, very juicy flesh.",
+          "Marrakech Navel: ideal for fresh consumption, harvested from November to February, sweet and melting flesh, seedless.",
+          "Salustiana: both juicy and sweet, harvested from December to March, thin skin, low acidity."
+        ],
+        zh: [
+          "摩洛哥晚熟：适合榨汁，2月至5月收获，球形水果，皮薄，果肉多汁。",
+          "马拉喀什纳维尔：适合新鲜食用，11月至2月收获，甜美软嫩的果肉，无籽。",
+          "萨鲁斯蒂亚娜：既多汁又甜美，12月至3月收获，皮薄，酸度低。"
+        ]
+      },
+      production: {
+        fr: "La région de Marrakech est l'une des zones agrumicoles les plus importantes du Maroc. La récolte est réalisée manuellement pour éviter d'abîmer les fruits. Les oranges sont ensuite stockées dans des chambres froides pour préserver leur fraîcheur.",
+        en: "The Marrakech region is one of the most important citrus areas in Morocco. Harvesting is done manually to avoid damaging the fruits. The oranges are then stored in cold rooms to preserve their freshness.",
+        zh: "马拉喀什地区是摩洛哥最重要的柑橘产区之一。收获是手工完成的，以避免损坏水果。然后将橙子存放在冷藏室中以保持新鲜度。"
+      },
+      storage: {
+        fr: "Les oranges sont conditionnées en caisses ou en filets de 10 à 15 kg. Elles sont stockées dans des chambres froides à une température de 4-7°C et une humidité relative de 90-95% pour une durée de conservation optimale.",
+        en: "Oranges are packaged in crates or nets of 10 to 15 kg. They are stored in cold rooms at a temperature of 4-7°C and relative humidity of 90-95% for optimal shelf life.",
+        zh: "橙子包装在10至15公斤的箱子或网袋中。它们存放在4-7°C温度和90-95%相对湿度的冷藏室中，以获得最佳保存期。"
+      },
+      benefits: {
+        fr: ["Riche en vitamine C et en antioxydants", "Renforce le système immunitaire", "Favorise une peau saine", "Aide à la digestion", "Faible en calories, hydratante et rafraîchissante"],
+        en: ["Rich in vitamin C and antioxidants", "Strengthens the immune system", "Promotes healthy skin", "Aids digestion", "Low in calories, hydrating and refreshing"],
+        zh: ["富含维生素C和抗氧化剂", "增强免疫系统", "促进健康的皮肤", "帮助消化", "低热量，补水和清爽"]
+      },
+      applications: {
+        fr: ["Jus d'orange pressé", "Salades de fruits et desserts", "Cuisine marocaine (ex : tajines à l'orange)", "Zestes pour pâtisserie", "Marmelades et confitures artisanales"],
+        en: ["Freshly squeezed orange juice", "Fruit salads and desserts", "Moroccan cuisine (e.g., orange tajines)", "Zest for pastry", "Artisanal marmalades and jams"],
+        zh: ["鲜榨橙汁", "水果沙拉和甜点", "摩洛哥料理（如：橙子塔吉锅）", "用于糕点的橙皮", "手工橙子酱和果酱"]
+      },
+      images: [
+        'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
       ]
     }
   };
