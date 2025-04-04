@@ -7,7 +7,6 @@ import { useToast } from '@/components/ui/use-toast';
 import ProductImageCarousel from '@/components/ProductImageCarousel';
 import { Separator } from "@/components/ui/separator";
 
-// Type pour assurer que toutes les propriétés nécessaires sont présentes
 interface ProductCommon {
   id: string;
   name: string;
@@ -45,7 +44,6 @@ interface ProductCommon {
   images: string[];
 }
 
-// Type pour les propriétés spécifiques au produit "purple-onion"
 interface OnionProduct extends ProductCommon {
   varieties: {
     fr: string[];
@@ -54,10 +52,8 @@ interface OnionProduct extends ProductCommon {
   };
 }
 
-// Type union pour tous les produits
 type ProductType = ProductCommon | OnionProduct;
 
-// Fonction pour vérifier si un produit a des variétés (est de type OnionProduct)
 const hasVarieties = (product: ProductType): product is OnionProduct => {
   return 'varieties' in product;
 };
@@ -266,7 +262,6 @@ const Product = () => {
 
   const currentLang = language as keyof typeof product.longDescription;
 
-  // Additional product info based on product type
   const renderAdditionalInfo = () => {
     if (hasVarieties(product)) {
       return (
