@@ -44,6 +44,12 @@ const ProductsSection = () => {
       name: t('marrakechOrange'),
       description: t('marrakechOrangeDesc'),
       image: 'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
+    },
+    {
+      id: 'niger-mango',
+      name: t('nigerMango'),
+      description: t('nigerMangoDesc'),
+      image: 'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
     }
   ];
 

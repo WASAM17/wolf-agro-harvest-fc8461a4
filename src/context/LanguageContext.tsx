@@ -103,6 +103,18 @@ const translations: Translations = {
     zh: '来自马拉喀什的甜美多汁橙子，在摩洛哥阳光下种植，具有独特的花香。' 
   },
   
+  // New product - Niger Mango
+  nigerMango: { 
+    fr: 'Mangue du Niger', 
+    en: 'Niger Mango', 
+    zh: '尼日尔芒果' 
+  },
+  nigerMangoDesc: { 
+    fr: 'Mangues juteuses et sucrées du Niger, récoltées à maturité optimale, avec une chair fondante et un parfum envoûtant.', 
+    en: 'Sweet and juicy mangoes from Niger, harvested at optimal maturity, with melting flesh and captivating aroma.', 
+    zh: '来自尼日尔的甜美多汁芒果，在最佳成熟度收获，果肉软嫩，香气迷人。' 
+  },
+  
   // Contact Section
   contactTitle: { fr: 'Contactez-Nous', en: 'Contact Us', zh: '联系我们' },
   contactSub: { 

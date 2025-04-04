@@ -60,9 +60,17 @@ interface OrangeProduct extends ProductCommon {
   };
 }
 
-type ProductType = ProductCommon | OnionProduct | OrangeProduct;
+interface MangoProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
 
-const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct => {
+type ProductType = ProductCommon | OnionProduct | OrangeProduct | MangoProduct;
+
+const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct | MangoProduct => {
   return 'varieties' in product;
 };
 
@@ -294,6 +302,61 @@ const Product = () => {
       },
       images: [
         'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
+      ]
+    },
+    'niger-mango': {
+      id: 'niger-mango',
+      name: t('nigerMango'),
+      description: t('nigerMangoDesc'),
+      longDescription: {
+        fr: "La mangue du Niger, joyau tropical de l'Afrique de l'Ouest, séduit par sa chair fondante, son goût délicieusement sucré et son parfum envoûtant. Cultivée principalement dans les régions de Dosso, Tillabéri et Niamey, cette mangue bénéficie d'un climat chaud et sec favorable à sa maturation naturelle. Récoltée à la main à pleine maturité, elle est appréciée aussi bien en consommation fraîche qu'en transformation (jus, purée, séchage). Grâce à une filière de production en pleine structuration, la mangue nigérienne se distingue par sa qualité, sa traçabilité et son excellent potentiel d'exportation.",
+        en: "Niger's mango, a tropical jewel of West Africa, captivates with its melting flesh, deliciously sweet taste, and enchanting fragrance. Cultivated mainly in the Dosso, Tillabéri, and Niamey regions, this mango benefits from a hot, dry climate favorable to its natural ripening. Hand-harvested at full maturity, it is appreciated both for fresh consumption and processing (juice, purée, drying). Thanks to a well-structured production chain, Nigerien mango stands out for its quality, traceability, and excellent export potential.",
+        zh: "尼日尔芒果，西非的热带珍宝，以其软嫩的果肉、美味甜美的口感和迷人的香气吸引人。主要在多索、蒂拉贝里和尼亚美地区种植，这种芒果得益于有利于其自然成熟的炎热干燥气候。在完全成熟时手工采摘，既可新鲜食用，也可加工（果汁、果泥、干制）。得益于结构完善的生产链，尼日尔芒果以其质量、可追溯性和出色的出口潜力而脱颖而出。"
+      },
+      scientificInfo: {
+        fr: "Nom scientifique : Mangifera indica. Code douanier : HS0804500000. Principales variétés : Kent, Keitt, Amélie. Poids moyen : entre 300 et 600 g. Saison : avril à juillet. Méthode de culture : agriculture conventionnelle ou biologique, sans traitements post-récolte chimiques pour l'export.",
+        en: "Scientific name: Mangifera indica. Customs code: HS0804500000. Main varieties: Kent, Keitt, Amélie. Average weight: between 300 and 600 g. Season: April to July. Cultivation method: conventional or organic agriculture, without chemical post-harvest treatments for export.",
+        zh: "科学名称：芒果。海关编码：HS0804500000。主要品种：肯特、凯特、阿梅利。平均重量：300至600克。季节：4月至7月。种植方法：传统或有机农业，出口无化学收后处理。"
+      },
+      varieties: {
+        fr: [
+          "Amélie : maturité précoce (avril-mai), peau verte, chair très juteuse, peu fibreuse, goût doux et parfumé.",
+          "Kent : maturité intermédiaire (mai-juin), peau rougeâtre à maturité, chair onctueuse, très sucrée, peu fibreuse.",
+          "Keitt : maturité tardive (juin-juillet), gros calibre, bonne tenue, parfaite pour le transport, goût équilibré."
+        ],
+        en: [
+          "Amélie: early maturity (April-May), green skin, very juicy flesh, low fiber, mild and fragrant taste.",
+          "Kent: intermediate maturity (May-June), reddish skin when ripe, creamy flesh, very sweet, low fiber.",
+          "Keitt: late maturity (June-July), large size, good firmness, perfect for transport, balanced taste."
+        ],
+        zh: [
+          "阿梅利：早熟（4月-5月），绿皮，果肉多汁，纤维少，味道温和芳香。",
+          "肯特：中熟（5月-6月），成熟时呈红色皮，果肉柔滑，非常甜，纤维少。",
+          "凯特：晚熟（6月-7月），大尺寸，硬度好，适合运输，味道平衡。"
+        ]
+      },
+      production: {
+        fr: "Le Niger produit environ 80 000 tonnes de mangues par an. La récolte est entièrement manuelle. Après tri et lavage, les mangues destinées à l'export sont stockées dans des chambres climatisées et conditionnées en cagettes de 4 à 6 kg. Des unités de transformation locales produisent également des mangues séchées, confitures et jus artisanaux.",
+        en: "Niger produces about 80,000 tons of mangoes per year. Harvesting is entirely manual. After sorting and washing, mangoes for export are stored in air-conditioned rooms and packaged in 4 to 6 kg crates. Local processing units also produce dried mangoes, jams, and artisanal juices.",
+        zh: "尼日尔每年生产约8万吨芒果。收获完全是手工的。分类和清洗后，出口芒果存放在空调室内，并包装在4至6公斤的木箱中。当地加工单位还生产干芒果、果酱和手工果汁。"
+      },
+      storage: {
+        fr: "Les mangues sont conditionnées dans des cagettes de 4 à 6 kg. Pour l'exportation, elles sont stockées dans des chambres froides à une température de 8-10°C et 90-95% d'humidité relative pour préserver leur fraîcheur pendant le transport.",
+        en: "Mangoes are packaged in 4 to 6 kg crates. For export, they are stored in cold rooms at a temperature of 8-10°C and 90-95% relative humidity to preserve their freshness during transport.",
+        zh: "芒果包装在4至6公斤的木箱中。对于出口，它们存放在8-10°C温度和90-95%相对湿度的冷藏室中，以在运输过程中保持新鲜度。"
+      },
+      benefits: {
+        fr: ["Riche en vitamines A, C et E", "Antioxydants naturels", "Bon pour la digestion (fibres douces)", "Renforce l'immunité", "Excellent en alimentation saine ou sportive"],
+        en: ["Rich in vitamins A, C, and E", "Natural antioxidants", "Good for digestion (soft fibers)", "Strengthens immunity", "Excellent for healthy or sports nutrition"],
+        zh: ["富含维生素A、C和E", "天然抗氧化剂", "有益消化（软纤维）", "增强免疫力", "适合健康或运动营养"]
+      },
+      applications: {
+        fr: ["Consommation fraîche", "Jus, smoothies et nectar", "Salades tropicales", "Mangue séchée artisanale", "Confitures, chutneys et sauces"],
+        en: ["Fresh consumption", "Juices, smoothies, and nectar", "Tropical salads", "Artisanal dried mango", "Jams, chutneys, and sauces"],
+        zh: ["新鲜食��", "果汁、冰沙和花蜜", "热带沙拉", "手工干芒果", "果酱、酸辣酱和酱汁"]
+      },
+      images: [
+        'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
       ]
     }
   };
