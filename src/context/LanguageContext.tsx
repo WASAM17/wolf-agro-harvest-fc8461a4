@@ -115,6 +115,18 @@ const translations: Translations = {
     zh: '来自尼日尔的甜美多汁芒果，在最佳成熟度收获，果肉软嫩，香气迷人。' 
   },
   
+  // New product - West African Plantain
+  westAfricanPlantain: { 
+    fr: 'Banane Plantain d\'Afrique de l\'Ouest', 
+    en: 'West African Plantain', 
+    zh: '西非大蕉' 
+  },
+  westAfricanPlantainDesc: { 
+    fr: 'Banane plantain de qualité premium, polyvalente et nutritive, récoltée à maturité optimale en Afrique de l\'Ouest.', 
+    en: 'Premium quality plantain, versatile and nutritious, harvested at optimal maturity in West Africa.', 
+    zh: '优质大蕉，用途广泛且营养丰富，在西非以最佳成熟度收获。' 
+  },
+  
   // Contact Section
   contactTitle: { fr: 'Contactez-Nous', en: 'Contact Us', zh: '联系我们' },
   contactSub: { 

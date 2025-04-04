@@ -50,6 +50,12 @@ const ProductsSection = () => {
       name: t('nigerMango'),
       description: t('nigerMangoDesc'),
       image: 'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
+    },
+    {
+      id: 'west-african-plantain',
+      name: t('westAfricanPlantain'),
+      description: t('westAfricanPlantainDesc'),
+      image: 'https://www.shutterstock.com/image-photo/bunches-ripe-plantain-colombian-peasant-600nw-2499828565.jpg'
     }
   ];
 
