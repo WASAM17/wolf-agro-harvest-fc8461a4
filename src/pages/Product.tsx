@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -297,7 +296,7 @@ const Product = () => {
       storage: {
         fr: "Les oranges sont conditionnées en caisses ou en filets de 10 à 15 kg. Elles sont stockées dans des chambres froides à une température de 4-7°C et une humidité relative de 90-95% pour une durée de conservation optimale.",
         en: "Oranges are packaged in crates or nets of 10 to 15 kg. They are stored in cold rooms at a temperature of 4-7°C and relative humidity of 90-95% for optimal shelf life.",
-        zh: "橙子包装在10至15公斤的箱子或网袋中。它们存放在4-7°C温度和90-95%相对湿度的冷藏室中，以获得最佳保存期。"
+        zh: "橙子包装在10至15公斤的箱子或网袋中。它们存放在4至7°C温度和90-95%相对湿度的冷藏室中，以获得最佳保存期。"
       },
       benefits: {
         fr: ["Riche en vitamine C et en antioxydants", "Renforce le système immunitaire", "Favorise une peau saine", "Aide à la digestion", "Faible en calories, hydratante et rafraîchissante"],
@@ -357,7 +356,7 @@ const Product = () => {
       benefits: {
         fr: ["Riche en vitamines A, C et E", "Antioxydants naturels", "Bon pour la digestion (fibres douces)", "Renforce l'immunité", "Excellent en alimentation saine ou sportive"],
         en: ["Rich in vitamins A, C, and E", "Natural antioxidants", "Good for digestion (soft fibers)", "Strengthens immunity", "Excellent for healthy or sports nutrition"],
-        zh: ["富含维生素A、C和E", "天然抗氧化剂", "有益消化（软纤维）", "增强免疫力", "适合健康或运动营养"]
+        zh: ["富含维生素A、C和E", "天然抗氧化剂", "有益消化（软纤维）", "增强免疫力", "��合健康或运动营养"]
       },
       applications: {
         fr: ["Consommation fraîche", "Jus, smoothies et nectar", "Salades tropicales", "Mangue séchée artisanale", "Confitures, chutneys et sauces"],
@@ -375,7 +374,7 @@ const Product = () => {
       longDescription: {
         fr: "La banane plantain, appelée aussi \"banane farine\" ou \"banane à cuire\", est un incontournable de la cuisine africaine. Cultivée dans plusieurs régions d'Afrique de l'Ouest (notamment en Côte d'Ivoire, au Ghana, au Bénin et au Nigeria), elle est appréciée pour sa polyvalence, sa chair ferme et savoureuse, et sa richesse nutritionnelle. Qu'elle soit verte, jaune ou bien mûre, la banane plantain se cuisine de mille façons : frite, bouillie, en purée ou en chips. Grâce à des méthodes de culture respectueuses et une récolte manuelle, nous proposons une banane plantain de qualité premium, récoltée à maturité optimale et parfaitement adaptée à la consommation locale et à l'export.",
         en: "Plantain, also called \"cooking banana\", is a staple of African cuisine. Grown in several regions of West Africa (especially in Ivory Coast, Ghana, Benin, and Nigeria), it is appreciated for its versatility, firm and flavorful flesh, and nutritional richness. Whether green, yellow, or fully ripe, plantain can be cooked in a thousand ways: fried, boiled, mashed, or as chips. Thanks to respectful cultivation methods and manual harvesting, we offer premium quality plantain, harvested at optimal maturity and perfectly suited for both local consumption and export.",
-        zh: "大蕉，又称"烹饪香蕉"，是非洲烹饪的主食。它在西非多个地区种植（特别是在科特迪瓦、加纳、贝宁和尼日利亚），因其多功能性、坚实可口的果肉和丰富的营养而受到赞赏。无论是绿色、黄色还是完全成熟，大蕉都可以以千种方式烹饪：炸、煮、捣碎或制成薯片。得益于尊重环境的种植方法和手工收获，我们提供优质的大蕉，在最佳成熟度收获，非常适合本地消费和出口。"
+        zh: "大蕉，又称\"烹饪香蕉\"，是非洲烹饪的主食。它在西非多个地区种植（特别是在科特迪瓦、加纳、贝宁和尼日利亚），因其多功能性、坚实可口的果肉和丰富的营养而受到赞赏。无论是绿色、黄色还是完全成熟，大蕉都可以以千种方式烹饪：炸、煮、捣碎或制成薯片。得益于尊重环境的种植方法和手工收获，我们提供优质的大蕉，在最佳成熟度收获，非常适合本地消费和出口。"
       },
       scientificInfo: {
         fr: "Nom scientifique : Musa paradisiaca. Code douanier : HS0803909000. Type : banane à cuire (différente de la banane dessert). Poids moyen : 250–400 g par doigt. Stades de consommation : verte (riche en amidon), jaune (moelleuse), noire (douce et sucrée).",
