@@ -38,24 +38,6 @@ const ProductsSection = () => {
       name: t('onion'),
       description: t('onionDesc'),
       image: 'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
-    },
-    {
-      id: 'marrakech-orange',
-      name: t('marrakechOrange'),
-      description: t('marrakechOrangeDesc'),
-      image: 'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
-    },
-    {
-      id: 'niger-mango',
-      name: t('nigerMango'),
-      description: t('nigerMangoDesc'),
-      image: 'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
-    },
-    {
-      id: 'west-african-plantain',
-      name: t('westAfricanPlantain'),
-      description: t('westAfricanPlantainDesc'),
-      image: 'https://www.shutterstock.com/image-photo/bunches-ripe-plantain-colombian-peasant-600nw-2499828565.jpg'
     }
   ];
 
