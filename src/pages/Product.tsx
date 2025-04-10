@@ -100,7 +100,7 @@ const Product = () => {
       scientificInfo: {
         fr: "Nom scientifique : Sesamum indicum. Principales variétés : sésame blanc, sésame brun, sésame bigaré. C'est une plante annuelle pouvant mesurer jusqu'à un mètre de hauteur avec un système racinaire tolérant à la sécheresse. Les sols limoneux acides sont ceux qui conviennent le mieux à sa culture, tandis que les sols alcalins et sableux lui sont impropres.",
         en: "Scientific name: Sesamum indicum. Main varieties: white sesame, brown sesame, variegated sesame. It is an annual plant that can measure up to one meter in height with a drought-tolerant root system. Acidic loamy soils are best suited for its cultivation, while alkaline and sandy soils are unsuitable.",
-        zh: "科学名称：芝麻属。主要品种：白芝麻、棕色芝麻、杂色芝麻。它是一种一年生植物，高度可达一米，根系耐旱。酸性壤土最适合其种植，而碱性和沙质土壤则不适合。"
+        zh: "科学名称：芝麻属。主要品种：白芝麻、棕色芝麻、杂色芝麻。它是一种��年生植物，高度可达一米，根系耐旱。酸性壤土最适合其种植，而碱性和沙质土壤则不适合。"
       },
       production: {
         fr: "La production est concentrée dans les régions de Maradi (principalement dans les départements de Tessaoua, Aguié et Gazaoua) et de Zinder (Magaria). Le potentiel exportable de sésame est estimé à une moyenne de 41.730 tonnes par an.",
@@ -133,7 +133,7 @@ const Product = () => {
       longDescription: {
         fr: "Les arachides du Niger sont cultivées dans les zones fertiles du pays et se distinguent par leur saveur riche et leur texture croquante. Notre processus de récolte et de séchage soigneux préserve leur qualité naturelle et leur valeur nutritionnelle. Nos arachides sont disponibles sous différentes formes : en coque, décortiquées, ou transformées en huile ou en pâte. Elles constituent une excellente source de protéines, de fibres et de graisses saines, ce qui en fait un aliment nutritif et polyvalent. Nous garantissons des produits exempts de contaminants et conformes aux normes internationales de sécurité alimentaire.",
         en: "Niger's peanuts are grown in the country's fertile areas and stand out for their rich flavor and crunchy texture. Our careful harvesting and drying process preserves their natural quality and nutritional value. Our peanuts are available in various forms: in-shell, shelled, or processed into oil or paste. They are an excellent source of protein, fiber, and healthy fats, making them a nutritious and versatile food. We guarantee products free from contaminants and compliant with international food safety standards.",
-        zh: "尼日尔的花生在该国肥沃的地区种植，以其丰富的味道和脆脆的质地而脱颖而出。我们精心的收获和干燥过程保留了它们的天然品质和营养价值。我们的花生有多种形式：带壳、去壳或加工成油或糊状。它们是蛋白质、纤维和健康脂肪的优秀来源，使其成为营养丰富且多用途的食品。我们保证产品不含污染物，符合国际食品安全标准。"
+        zh: "尼日尔的花生在该国肥沃的地区种植，以其丰富的味道和脆脆的质地而脱颖而出。我们精心的收获和干燥过程保留了它们的天然品质���营养价值。我们的花生有多种形式：带壳、去壳或加工成油或糊状。它们是蛋白质、纤维和健康脂肪的优秀来源，使其成为营养丰富且多用途的食品。我们保证产品不含污染物，符合国际食品安全标准。"
       },
       scientificInfo: {
         fr: "L'arachide est une plante de la famille des légumineuses, originaire d'Amérique du Sud, adaptée aux climats chauds. Elle produit des gousses souterraines contenant des graines comestibles riches en huile.",
@@ -199,7 +199,7 @@ const Product = () => {
         zh: ["饮料中的稳定剂", "糖果中的包衣剂", "药片中的粘合剂", "化妆品中的乳化剂", "印刷油墨和粘合剂"]
       },
       images: [
-        'https://www.anipex.org/images/gum-arabic-1.jpg'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFDIWYyb2pQUo1G0SqUPXwzY6dAIspa74ZIw&s'
       ]
     },
     'purple-onion': {
@@ -323,4 +323,263 @@ const Product = () => {
       },
       scientificInfo: {
         fr: "Nom scientifique : Mangifera indica. Code douanier : HS0804500000. Principales variétés : Kent, Keitt, Amélie. Poids moyen : entre 300 et 600 g. Saison : avril à juillet. Méthode de culture : agriculture conventionnelle ou biologique, sans traitements post-récolte chimiques pour l'export.",
-        en: "Scientific name: Mangifera indica.
+        en: "Scientific name: Mangifera indica. Customs code: HS0804500000. Main varieties: Kent, Keitt, Amélie. Average weight: between 300 and 600 g. Season: April to July. Cultivation method: conventional or organic agriculture, without chemical post-harvest treatments for export.",
+        zh: "科学名称：芒果。海关编码：HS0804500000。主要品种：肯特、凯特、阿梅利。平均重量：300至600克。季节：4月至7月。种植方法：传统或有机农业，出口无化学收后处理。"
+      },
+      varieties: {
+        fr: [
+          "Amélie : maturité précoce (avril-mai), peau verte, chair très juteuse, peu fibreuse, goût doux et parfumé.",
+          "Kent : maturité intermédiaire (mai-juin), peau rougeâtre à maturité, chair onctueuse, très sucrée, peu fibreuse.",
+          "Keitt : maturité tardive (juin-juillet), gros calibre, bonne tenue, parfaite pour le transport, goût équilibré."
+        ],
+        en: [
+          "Amélie: early maturity (April-May), green skin, very juicy flesh, low fiber, mild and fragrant taste.",
+          "Kent: intermediate maturity (May-June), reddish skin when ripe, creamy flesh, very sweet, low fiber.",
+          "Keitt: late maturity (June-July), large size, good firmness, perfect for transport, balanced taste."
+        ],
+        zh: [
+          "阿梅利：早熟（4月-5月），绿皮，果肉多汁，纤维少，味道温和芳香。",
+          "肯特：中熟（5月-6月），成熟时呈红色皮，果肉柔滑，非常甜，纤维少。",
+          "凯特：晚熟（6月-7月），大尺寸，硬度好，适合运输，味道平衡。"
+        ]
+      },
+      production: {
+        fr: "Le Niger produit environ 80 000 tonnes de mangues par an. La récolte est entièrement manuelle. Après tri et lavage, les mangues destinées à l'export sont stockées dans des chambres climatisées et conditionnées en cagettes de 4 à 6 kg. Des unités de transformation locales produisent également des mangues séchées, confitures et jus artisanaux.",
+        en: "Niger produces about 80,000 tons of mangoes per year. Harvesting is entirely manual. After sorting and washing, mangoes for export are stored in air-conditioned rooms and packaged in 4 to 6 kg crates. Local processing units also produce dried mangoes, jams, and artisanal juices.",
+        zh: "尼日尔每年生产约8万吨芒果。收获完全是手工的。分类和清洗后，出口芒果存放在空调室内，并包装在4至6公斤的木箱中。当地加工单位还生产干芒果、果酱和手工果汁。"
+      },
+      storage: {
+        fr: "Les mangues sont conditionnées dans des cagettes de 4 à 6 kg. Pour l'exportation, elles sont stockées dans des chambres froides à une température de 8-10°C et 90-95% d'humidité relative pour préserver leur fraîcheur pendant le transport.",
+        en: "Mangoes are packaged in 4 to 6 kg crates. For export, they are stored in cold rooms at a temperature of 8-10°C and 90-95% relative humidity to preserve their freshness during transport.",
+        zh: "芒果包装在4至6公斤的木箱中。对于出口，它们存放在8-10°C温度和90-95%相对湿度的冷藏室中，以在运输过程中保持新鲜度。"
+      },
+      benefits: {
+        fr: ["Riche en vitamines A, C et E", "Antioxydants naturels", "Bon pour la digestion (fibres douces)", "Renforce l'immunité", "Excellent en alimentation saine ou sportive"],
+        en: ["Rich in vitamins A, C, and E", "Natural antioxidants", "Good for digestion (soft fibers)", "Strengthens immunity", "Excellent for healthy or sports nutrition"],
+        zh: ["富含维生素A、C和E", "天然抗氧化剂", "有益消化（软纤维）", "增强免疫力", "��合健康或运动营养"]
+      },
+      applications: {
+        fr: ["Consommation fraîche", "Jus, smoothies et nectar", "Salades tropicales", "Mangue séchée artisanale", "Confitures, chutneys et sauces"],
+        en: ["Fresh consumption", "Juices, smoothies, and nectar", "Tropical salads", "Artisanal dried mango", "Jams, chutneys, and sauces"],
+        zh: ["新鲜食��", "果汁、冰沙和花蜜", "热带沙拉", "手工干芒果", "果酱、酸辣酱和酱汁"]
+      },
+      images: [
+        'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
+      ]
+    },
+    'west-african-plantain': {
+      id: 'west-african-plantain',
+      name: t('westAfricanPlantain'),
+      description: t('westAfricanPlantainDesc'),
+      longDescription: {
+        fr: "La banane plantain, appelée aussi \"banane farine\" ou \"banane à cuire\", est un incontournable de la cuisine africaine. Cultivée dans plusieurs régions d'Afrique de l'Ouest (notamment en Côte d'Ivoire, au Ghana, au Bénin et au Nigeria), elle est appréciée pour sa polyvalence, sa chair ferme et savoureuse, et sa richesse nutritionnelle. Qu'elle soit verte, jaune ou bien mûre, la banane plantain se cuisine de mille façons : frite, bouillie, en purée ou en chips. Grâce à des méthodes de culture respectueuses et une récolte manuelle, nous proposons une banane plantain de qualité premium, récoltée à maturité optimale et parfaitement adaptée à la consommation locale et à l'export.",
+        en: "Plantain, also called \"cooking banana\", is a staple of African cuisine. Grown in several regions of West Africa (especially in Ivory Coast, Ghana, Benin, and Nigeria), it is appreciated for its versatility, firm and flavorful flesh, and nutritional richness. Whether green, yellow, or fully ripe, plantain can be cooked in a thousand ways: fried, boiled, mashed, or as chips. Thanks to respectful cultivation methods and manual harvesting, we offer premium quality plantain, harvested at optimal maturity and perfectly suited for both local consumption and export.",
+        zh: "大蕉，又称\"烹饪香蕉\"，是非洲烹饪的主食。它在西非多个地区种植（特别是在科特迪瓦、加纳、贝宁和尼日利亚），因其多功能性、坚实可口的果肉和丰富的营养而受到赞赏。无论是绿色、黄色还是完全成熟，大蕉都可以以千种方式烹饪：炸、煮、捣碎或制成薯片。得益于尊重环境的种植方法和手工收获，我们提供优质的大蕉，在最佳成熟度收获，非常适合本地消费和出口。"
+      },
+      scientificInfo: {
+        fr: "Nom scientifique : Musa paradisiaca. Code douanier : HS0803909000. Type : banane à cuire (différente de la banane dessert). Poids moyen : 250–400 g par doigt. Stades de consommation : verte (riche en amidon), jaune (moelleuse), noire (douce et sucrée).",
+        en: "Scientific name: Musa paradisiaca. Customs code: HS0803909000. Type: cooking banana (different from dessert banana). Average weight: 250–400 g per finger. Consumption stages: green (starch-rich), yellow (soft), black (sweet).",
+        zh: "科学名称：大蕉。海关编码：HS0803909000。类型：烹饪香蕉（与甜点香蕉不同）。平均重量：每指250-400克。消费阶段：绿色（富含淀粉），黄色（软），黑色（甜）。"
+      },
+      varieties: {
+        fr: [
+          "Corne : très longue, jusqu'à 40 cm, idéale pour la friture, saveur douce une fois mûre.",
+          "Orishele : plus courte, chair dense, excellente en chips ou purée.",
+          "French : variété intermédiaire, polyvalente, bonne tenue à la cuisson."
+        ],
+        en: [
+          "Horn: very long, up to 40 cm, ideal for frying, sweet flavor when ripe.",
+          "Orishele: shorter, dense flesh, excellent for chips or puree.",
+          "French: intermediate variety, versatile, good cooking stability."
+        ],
+        zh: [
+          "角蕉：非常长，最长可达40厘米，适合油炸，成熟后味道甜美。",
+          "奥里谢尔：较短，肉质致密，非常适合制作薯片或果泥。",
+          "法式：中间品种，用途广泛，烹饪稳定性好。"
+        ]
+      },
+      production: {
+        fr: "La banane plantain est cultivée toute l'année dans des zones tropicales humides. La récolte se fait manuellement, à la main ou à la machette, lorsque les régimes atteignent leur pleine taille. Le stockage dépend du stade de maturité : verte (conservation longue, idéale pour l'export) ou jaune/noire (consommation rapide, locale ou transformation).",
+        en: "Plantain is grown year-round in humid tropical areas. Harvesting is done manually, by hand or machete, when bunches reach their full size. Storage depends on the maturity stage: green (long conservation, ideal for export) or yellow/black (quick consumption, local or processing).",
+        zh: "大蕉全年在湿热带地区种植。当香蕉束达到完全大小时，通过手工或砍刀收获。存储取决于成熟阶段：绿色（长期保存，适合出口）或黄色/黑色（快速消费，本地或加工）。"
+      },
+      storage: {
+        fr: "Conditionnement en régimes ou en cartons de 18–22 kg selon les destinations. Pour l'export, les bananes plantain vertes sont stockées dans des conteneurs réfrigérés entre 13-14°C avec une humidité contrôlée pour ralentir leur maturation.",
+        en: "Packaging in bunches or in 18–22 kg cartons depending on destinations. For export, green plantains are stored in refrigerated containers between 13-14°C with controlled humidity to slow down their ripening.",
+        zh: "根据目的地的不同，包装在束或18-22公斤的纸箱中。对于出口，绿色大蕉存放在13-14°C的冷藏集装箱中，湿度受控以减缓成熟过程。"
+      },
+      benefits: {
+        fr: ["Riche en potassium, magnésium et fibres", "Bonne source d'énergie (amidon complexe)", "Favorise une bonne digestion", "Sans gluten, adaptée aux régimes spécifiques", "Aide à la satiété"],
+        en: ["Rich in potassium, magnesium and fiber", "Good source of energy (complex starch)", "Promotes good digestion", "Gluten-free, suitable for specific diets", "Helps with satiety"],
+        zh: ["富含钾、镁和纤维", "良好的能量来源（复合淀粉）", "促进良好消化", "无麸质，适合特定饮食", "帮助饱腹感"]
+      },
+      applications: {
+        fr: ["Alloco (banane frite ivoirienne)", "Foufou de plantain", "Plantain braisé ou en ragoût", "Chips de banane plantain", "Purée ou galettes"],
+        en: ["Alloco (Ivorian fried plantain)", "Plantain fufu", "Braised plantain or stew", "Plantain chips", "Puree or patties"],
+        zh: ["阿洛科（科特迪瓦炸大蕉）", "大蕉糊糊", "炖大蕉或炖菜", "大蕉薯片", "果泥或饼"]
+      },
+      images: [
+        'https://www.shutterstock.com/image-photo/bunches-ripe-plantain-colombian-peasant-600nw-2499828565.jpg'
+      ]
+    }
+  };
+
+  const product = products[id as keyof typeof products];
+
+  if (!product) {
+    return (
+      <Layout>
+        <div className="py-20 min-h-screen">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl font-bold text-wolf-brown mb-4">Product Not Found</h1>
+            <p className="mb-6">The product you're looking for doesn't exist.</p>
+            <Link to="/#products">
+              <Button>Back to Products</Button>
+            </Link>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  const handleContact = () => {
+    toast({
+      title: "Contact Request",
+      description: `Thank you for your interest in our ${product.name}. We'll get back to you soon!`,
+    });
+  };
+
+  const currentLang = language as keyof typeof product.longDescription;
+
+  const renderAdditionalInfo = () => {
+    if (hasVarieties(product)) {
+      return (
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+            {language === 'fr' ? 'Variétés' : language === 'en' ? 'Varieties' : '品种'}:
+          </h2>
+          <ul className="list-disc list-inside mb-6 text-gray-600">
+            {product.varieties[currentLang].map((variety, index) => (
+              <li key={index} className="mb-3">{variety}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <Layout>
+      <div className="pt-16 pb-20 min-h-screen">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="h-[300px] md:h-full">
+                  <ProductImageCarousel 
+                    images={product.images} 
+                    productName={product.name} 
+                  />
+                </div>
+                
+                <div className="p-6 md:p-8">
+                  <Link to="/#products" className="text-wolf-green hover:text-wolf-brown mb-4 inline-block">
+                    ← {t('products')}
+                  </Link>
+                  
+                  <h1 className="text-3xl font-bold text-wolf-brown mb-3">
+                    {product.name}
+                  </h1>
+                  
+                  <p className="text-gray-600 mb-6">
+                    {product.longDescription[currentLang]}
+                  </p>
+                  
+                  <div className="bg-wolf-beige/20 p-4 rounded-md mb-6">
+                    <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+                      {language === 'fr' ? 'Informations Scientifiques' : language === 'en' ? 'Scientific Information' : '科学信息'}:
+                    </h2>
+                    <p className="text-gray-600 mb-2">
+                      {product.scientificInfo[currentLang]}
+                    </p>
+                  </div>
+                  
+                  {renderAdditionalInfo()}
+                  
+                  <Separator className="my-6" />
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+                        {language === 'fr' ? 'Production' : language === 'en' ? 'Production' : '生产'}:
+                      </h2>
+                      <p className="text-gray-600 mb-4">
+                        {product.production[currentLang]}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+                        {language === 'fr' ? 'Stockage' : language === 'en' ? 'Storage' : '储存'}:
+                      </h2>
+                      <p className="text-gray-600 mb-4">
+                        {product.storage[currentLang]}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <Separator className="my-6" />
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                      <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+                        {language === 'fr' ? 'Bénéfices' : language === 'en' ? 'Benefits' : '好处'}:
+                      </h2>
+                      <ul className="list-disc list-inside text-gray-600">
+                        {product.benefits[currentLang].map((benefit, index) => (
+                          <li key={index} className="mb-1">{benefit}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h2 className="text-xl font-semibold text-wolf-brown mb-3">
+                        {language === 'fr' ? 'Applications' : language === 'en' ? 'Applications' : '应用'}:
+                      </h2>
+                      <ul className="list-disc list-inside text-gray-600">
+                        {product.applications[currentLang].map((application, index) => (
+                          <li key={index} className="mb-1">{application}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                    <Button 
+                      onClick={handleContact}
+                      className="bg-wolf-green hover:bg-wolf-green/90 text-white"
+                    >
+                      {t('contactUs')}
+                    </Button>
+                    <a 
+                      href="https://wa.me/22720170401" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" className="w-full sm:w-auto">
+                        WhatsApp
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default Product;
