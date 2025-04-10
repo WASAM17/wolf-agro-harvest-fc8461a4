@@ -263,36 +263,36 @@ const Product = () => {
       name: t('marrakechOrange'),
       description: t('marrakechOrangeDesc'),
       longDescription: {
-        fr: "L'orange de Marrakech, cultivée sous le soleil généreux du Maroc, est une variété prisée pour son goût intensément sucré, son arôme floral unique et sa chair juteuse. Issues des vergers fertiles de la région de Marrakech, ces oranges bénéficient d'un terroir exceptionnel, où climat et sol s'allient pour offrir un fruit d'une qualité remarquable. Douces, peu acides, et naturellement parfumées, elles sont parfaites aussi bien en jus qu'à croquer à pleines dents. Grâce à notre partenariat direct avec des agriculteurs locaux, nous garantissons des oranges fraîchement récoltées à maturité optimale, manipulées avec soin pour préserver toutes leurs qualités gustatives et nutritionnelles.",
-        en: "Marrakech orange, grown under Morocco's generous sun, is a prized variety known for its intensely sweet taste, unique floral aroma, and juicy flesh. From the fertile orchards of the Marrakech region, these oranges benefit from an exceptional terroir, where climate and soil combine to offer a fruit of remarkable quality. Sweet, low in acidity, and naturally fragrant, they are perfect for juicing or eating fresh. Thanks to our direct partnership with local farmers, we guarantee oranges freshly harvested at optimal maturity, handled with care to preserve all their taste and nutritional qualities.",
-        zh: "摩洛哥马拉喀什橙子，在摩洛哥慷慨的阳光下种植，以其浓郁甜美的口感、独特的花香和多汁的果肉而备受推崇。来自马拉喀什地区肥沃的果园，这些橙子得益于卓越的风土条件，气候和土壤结合提供了品质非凡的水果。甜美、低酸度、自然芳香，无论是榨汁还是新鲜食用都是完美的选择。得益于我们与当地农民的直接合作，我们保证橙子在最佳成熟度时新鲜采摘，精心处理以保留所有味道和营养品质。"
+        fr: "L'orange de Navel, cultivée sous le soleil généreux, est une variété prisée pour son goût intensément sucré, son arôme floral unique et sa chair juteuse. Issues de vergers fertiles, ces oranges bénéficient d'un terroir exceptionnel, où climat et sol s'allient pour offrir un fruit d'une qualité remarquable. Douces, peu acides, et naturellement parfumées, elles sont parfaites aussi bien en jus qu'à croquer à pleines dents. Grâce à notre partenariat direct avec des agriculteurs locaux, nous garantissons des oranges fraîchement récoltées à maturité optimale, manipulées avec soin pour préserver toutes leurs qualités gustatives et nutritionnelles.",
+        en: "Navel orange, grown under generous sun, is a prized variety known for its intensely sweet taste, unique floral aroma, and juicy flesh. From fertile orchards, these oranges benefit from an exceptional terroir, where climate and soil combine to offer a fruit of remarkable quality. Sweet, low in acidity, and naturally fragrant, they are perfect for juicing or eating fresh. Thanks to our direct partnership with local farmers, we guarantee oranges freshly harvested at optimal maturity, handled with care to preserve all their taste and nutritional qualities.",
+        zh: "脐橙，在慷慨的阳光下种植，以其浓郁甜美的口感、独特的花香和多汁的果肉而备受推崇。来自肥沃的果园，这些橙子得益于卓越的风土条件，气候和土壤结合提供了品质非凡的水果。甜美、低酸度、自然芳香，无论是榨汁还是新鲜食用都是完美的选择。得益于我们与当地农民的直接合作，我们保证橙子在最佳成熟度时新鲜采摘，精心处理以保留所有味道和营养品质。"
       },
       scientificInfo: {
-        fr: "Nom scientifique : Citrus sinensis. Code douanier : HS0805102200. Variétés principales : Maroc Late (idéale pour le jus), Navel (à chair fondante), Salustiana (très sucrée, sans pépins). Poids moyen : 150–250 g selon la variété. Teneur en jus : entre 45 et 55 %.",
-        en: "Scientific name: Citrus sinensis. Customs code: HS0805102200. Main varieties: Maroc Late (ideal for juice), Navel (with melting flesh), Salustiana (very sweet, seedless). Average weight: 150–250 g depending on the variety. Juice content: between 45 and 55%.",
-        zh: "科学名称：甜橙。海关编码：HS0805102200。主要品种：摩洛哥晚熟（适合榨汁），纳维尔（肉质软），萨鲁斯蒂亚娜（非常甜，无籽）。平均重量：根据品种150-250克。果汁含量：45-55%之间。"
+        fr: "Nom scientifique : Citrus sinensis. Code douanier : HS0805102200. Variétés principales : Navel Washington, Lane Late, Navelina. Poids moyen : 150–250 g selon la variété. Teneur en jus : entre 45 et 55 %.",
+        en: "Scientific name: Citrus sinensis. Customs code: HS0805102200. Main varieties: Washington Navel, Lane Late, Navelina. Average weight: 150–250 g depending on the variety. Juice content: between 45 and 55%.",
+        zh: "科学名称：甜橙。海关编码：HS0805102200。主要品种：华盛顿脐橙，莱恩晚熟，纳维利娜。平均重量：根据品种150-250克。果汁含量：45-55%之间。"
       },
       varieties: {
         fr: [
-          "Maroc Late : excellente pour le jus, récoltée de février à mai, fruit sphérique, peau fine, chair très juteuse.",
-          "Navel de Marrakech : idéale pour la consommation fraîche, récoltée de novembre à février, chair douce et fondante, sans pépins.",
-          "Salustiana : à la fois juteuse et sucrée, récoltée de décembre à mars, peau fine, peu d'acidité."
+          "Navel Washington : excellente pour la consommation fraîche, récoltée de novembre à février, fruit rond à ovale, peau épaisse, chair très juteuse.",
+          "Lane Late : tardive et sucrée, récoltée de janvier à avril, excellente saveur et sans pépins.",
+          "Navelina : précoce, récoltée d'octobre à janvier, peau fine et lisse, pulpe particulièrement sucrée."
         ],
         en: [
-          "Maroc Late: excellent for juice, harvested from February to May, spherical fruit, thin skin, very juicy flesh.",
-          "Marrakech Navel: ideal for fresh consumption, harvested from November to February, sweet and melting flesh, seedless.",
-          "Salustiana: both juicy and sweet, harvested from December to March, thin skin, low acidity."
+          "Washington Navel: excellent for fresh consumption, harvested from November to February, round to oval fruit, thick skin, very juicy flesh.",
+          "Lane Late: late and sweet, harvested from January to April, excellent flavor and seedless.",
+          "Navelina: early, harvested from October to January, thin and smooth skin, particularly sweet pulp."
         ],
         zh: [
-          "摩洛哥晚熟：适合榨汁，2月至5月收获，球形水果，皮薄，果肉多汁。",
-          "马拉喀什纳维尔：适合新鲜食用，11月至2月收获，甜美软嫩的果肉，无籽。",
-          "萨鲁斯蒂亚娜：既多汁又甜美，12月至3月收获，皮薄，酸度低。"
+          "华盛顿脐橙：适合新鲜食用，11月至2月收获，圆形至椭圆形水果，皮厚，果肉多汁。",
+          "莱恩晚熟：晚熟且甜美，1月至4月收获，风味绝佳且无籽。",
+          "纳维利娜：早熟，10月至1月收获，皮薄光滑，果肉特别甜。"
         ]
       },
       production: {
-        fr: "La région de Marrakech est l'une des zones agrumicoles les plus importantes du Maroc. La récolte est réalisée manuellement pour éviter d'abîmer les fruits. Les oranges sont ensuite stockées dans des chambres froides pour préserver leur fraîcheur.",
-        en: "The Marrakech region is one of the most important citrus areas in Morocco. Harvesting is done manually to avoid damaging the fruits. The oranges are then stored in cold rooms to preserve their freshness.",
-        zh: "马拉喀什地区是摩洛哥最重要的柑橘产区之一。收获是手工完成的，以避免损坏水果。然后将橙子存放在冷藏室中以保持新鲜度。"
+        fr: "La production d'oranges Navel est réalisée dans des régions au climat méditerranéen. La récolte est effectuée manuellement pour éviter d'abîmer les fruits. Les oranges sont ensuite stockées dans des chambres froides pour préserver leur fraîcheur.",
+        en: "Navel orange production is carried out in regions with a Mediterranean climate. Harvesting is done manually to avoid damaging the fruits. The oranges are then stored in cold rooms to preserve their freshness.",
+        zh: "脐橙生产在地中海气候地区进行。收获是手工完成的，以避免损坏水果。然后将橙子存放在冷藏室中以保持新鲜度。"
       },
       storage: {
         fr: "Les oranges sont conditionnées en caisses ou en filets de 10 à 15 kg. Elles sont stockées dans des chambres froides à une température de 4-7°C et une humidité relative de 90-95% pour une durée de conservation optimale.",
@@ -305,9 +305,9 @@ const Product = () => {
         zh: ["富含维生素C和抗氧化剂", "增强免疫系统", "促进健康的皮肤", "帮助消化", "低热量，补水和清爽"]
       },
       applications: {
-        fr: ["Jus d'orange pressé", "Salades de fruits et desserts", "Cuisine marocaine (ex : tajines à l'orange)", "Zestes pour pâtisserie", "Marmelades et confitures artisanales"],
-        en: ["Freshly squeezed orange juice", "Fruit salads and desserts", "Moroccan cuisine (e.g., orange tajines)", "Zest for pastry", "Artisanal marmalades and jams"],
-        zh: ["鲜榨橙汁", "水果沙拉和甜点", "摩洛哥料理（如：橙子塔吉锅）", "用于糕点的橙皮", "手工橙子酱和果酱"]
+        fr: ["Jus d'orange pressé", "Salades de fruits et desserts", "Cuisine méditerranéenne", "Zestes pour pâtisserie", "Marmelades et confitures artisanales"],
+        en: ["Freshly squeezed orange juice", "Fruit salads and desserts", "Mediterranean cuisine", "Zest for pastry", "Artisanal marmalades and jams"],
+        zh: ["鲜榨橙汁", "水果沙拉和甜点", "地中海料理", "用于糕点的橙皮", "手工橙子酱和果酱"]
       },
       images: [
         'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
