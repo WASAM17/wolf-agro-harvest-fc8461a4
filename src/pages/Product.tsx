@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -356,12 +357,12 @@ const Product = () => {
       benefits: {
         fr: ["Riche en vitamines A, C et E", "Antioxydants naturels", "Bon pour la digestion (fibres douces)", "Renforce l'immunité", "Excellent en alimentation saine ou sportive"],
         en: ["Rich in vitamins A, C, and E", "Natural antioxidants", "Good for digestion (soft fibers)", "Strengthens immunity", "Excellent for healthy or sports nutrition"],
-        zh: ["富含维生素A、C和E", "天然抗氧化剂", "有益消化（软纤维）", "增强免疫力", "��合健康或运动营养"]
+        zh: ["富含维生素A、C和E", "天然抗氧化剂", "有益消化（软纤维）", "增强免疫力", "适合健康或运动营养"]
       },
       applications: {
         fr: ["Consommation fraîche", "Jus, smoothies et nectar", "Salades tropicales", "Mangue séchée artisanale", "Confitures, chutneys et sauces"],
         en: ["Fresh consumption", "Juices, smoothies, and nectar", "Tropical salads", "Artisanal dried mango", "Jams, chutneys, and sauces"],
-        zh: ["新鲜食��", "果汁、冰沙和花蜜", "热带沙拉", "手工干芒果", "果酱、酸辣酱和酱汁"]
+        zh: ["新鲜食用", "果汁、冰沙和花蜜", "热带沙拉", "手工干芒果", "果酱、酸辣酱和酱汁"]
       },
       images: [
         'https://nigerexpress.info/wp-content/uploads/2022/06/mangue-ingredients-mordu.webp'
