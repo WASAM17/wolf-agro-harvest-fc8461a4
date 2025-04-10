@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -31,7 +30,7 @@ const ProductsSection = () => {
       id: 'gum-arabic',
       name: t('gumArabic'),
       description: t('gumArabicDesc'),
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFDIWYyb2pQUo1G0SqUPXwzY6dAIspa74ZIw&s'
+      image: 'https://www.anipex.org/images/gum-arabic-1.jpg'
     },
     {
       id: 'purple-onion',
