@@ -3,7 +3,6 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
 interface Product {
   id: string;
@@ -56,46 +55,28 @@ const ProductsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {products.map((product) => (
-            <Card 
-              key={product.id} 
-              className="group overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white rounded-lg hover:translate-y-[-5px]"
-            >
+            <div key={product.id} className="product-card group">
               <div className="relative overflow-hidden h-56">
-                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 absolute inset-0 z-10"
-                  onLoad={(e) => {
-                    (e.target as HTMLElement).classList.remove('opacity-0');
-                    (e.target as HTMLElement).classList.add('opacity-100');
-                    (e.target as HTMLElement).parentElement?.querySelector('.bg-gray-200')?.classList.add('opacity-0');
-                  }}
-                  style={{ opacity: 0, transition: 'opacity 0.3s ease-in-out' }}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-
-              <CardContent className="p-6 z-30 relative">
-                <h3 className="text-xl font-bold text-wolf-brown mb-2 group-hover:text-wolf-green transition-colors">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-wolf-brown mb-2">
                   {product.name}
                 </h3>
                 <p className="text-gray-600 mb-4 line-clamp-3">
                   {product.description}
                 </p>
-              </CardContent>
-
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Link to={`/product/${product.id}`} className="w-full">
-                  <Button 
-                    variant="outline" 
-                    className="border-wolf-green text-wolf-green hover:bg-wolf-green hover:text-white transition-colors w-full group-hover:bg-wolf-green group-hover:text-white"
-                  >
+                <Link to={`/product/${product.id}`}>
+                  <Button variant="outline" className="border-wolf-green text-wolf-green hover:bg-wolf-green hover:text-white transition-colors w-full">
                     {t('learnMore')}
                   </Button>
                 </Link>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -53,9 +52,33 @@ interface OnionProduct extends ProductCommon {
   };
 }
 
-type ProductType = ProductCommon | OnionProduct;
+interface OrangeProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
 
-const hasVarieties = (product: ProductType): product is OnionProduct => {
+interface MangoProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
+
+interface PlantainProduct extends ProductCommon {
+  varieties: {
+    fr: string[];
+    en: string[];
+    zh: string[];
+  };
+}
+
+type ProductType = ProductCommon | OnionProduct | OrangeProduct | MangoProduct | PlantainProduct;
+
+const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct | MangoProduct | PlantainProduct => {
   return 'varieties' in product;
 };
 
@@ -233,121 +256,71 @@ const Product = () => {
       images: [
         'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
       ]
-    }
-  };
-
-  // Find the selected product based on the ID from URL params
-  const product = products[id || ''] || null;
-
-  if (!product) {
-    return (
-      <Layout>
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-2xl font-bold text-wolf-brown mb-6">{t('productNotFound')}</h1>
-          <Link to="/#products">
-            <Button className="bg-wolf-green hover:bg-wolf-green/90">
-              {t('backToProducts')}
-            </Button>
-          </Link>
-        </div>
-      </Layout>
-    );
-  }
-
-  return (
-    <Layout>
-      <div className="container mx-auto px-4 py-12">
-        <div className="mb-8">
-          <Link to="/#products" className="text-wolf-green hover:underline inline-flex items-center">
-            <span className="i-lucide-arrow-left mr-2"></span> {t('backToProducts')}
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <ProductImageCarousel images={product.images} productName={product.name} />
-          </div>
-
-          <div>
-            <h1 className="text-3xl font-bold text-wolf-brown mb-4">{product.name}</h1>
-            <p className="text-lg text-gray-700 mb-6">{product.description}</p>
-            
-            <div className="prose max-w-none">
-              <p className="mb-6">{product.longDescription[language]}</p>
-
-              <Button 
-                className="bg-wolf-green hover:bg-wolf-green/90 w-full md:w-auto"
-                onClick={() => {
-                  toast({
-                    title: t('inquirySuccess'),
-                    description: t('inquiryDesc')
-                  });
-                }}
-              >
-                {t('contactUs')}
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <Separator className="my-8" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-wolf-beige/30 p-6 rounded-lg">
-            <h2 className="text-xl font-bold text-wolf-brown mb-4">{t('scientificInfo')}</h2>
-            <p>{product.scientificInfo[language]}</p>
-          </div>
-          
-          <div className="bg-wolf-beige/30 p-6 rounded-lg">
-            <h2 className="text-xl font-bold text-wolf-brown mb-4">{t('production')}</h2>
-            <p>{product.production[language]}</p>
-          </div>
-          
-          <div className="bg-wolf-beige/30 p-6 rounded-lg">
-            <h2 className="text-xl font-bold text-wolf-brown mb-4">{t('storage')}</h2>
-            <p>{product.storage[language]}</p>
-          </div>
-        </div>
-
-        {hasVarieties(product) && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-wolf-brown mb-6">{t('varieties')}</h2>
-            <div className="bg-wolf-beige/20 p-6 rounded-lg">
-              <ul className="list-disc pl-6 space-y-4">
-                {product.varieties[language].map((variety, index) => (
-                  <li key={index} className="text-gray-700">{variety}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <h2 className="text-2xl font-bold text-wolf-brown mb-6">{t('benefits')}</h2>
-            <div className="bg-wolf-beige/20 p-6 rounded-lg">
-              <ul className="list-disc pl-6 space-y-2">
-                {product.benefits[language].map((benefit, index) => (
-                  <li key={index} className="text-gray-700">{benefit}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          
-          <div>
-            <h2 className="text-2xl font-bold text-wolf-brown mb-6">{t('applications')}</h2>
-            <div className="bg-wolf-beige/20 p-6 rounded-lg">
-              <ul className="list-disc pl-6 space-y-2">
-                {product.applications[language].map((application, index) => (
-                  <li key={index} className="text-gray-700">{application}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
-};
-
-export default Product;
+    },
+    'marrakech-orange': {
+      id: 'marrakech-orange',
+      name: t('marrakechOrange'),
+      description: t('marrakechOrangeDesc'),
+      longDescription: {
+        fr: "L'orange de Marrakech, cultivée sous le soleil généreux du Maroc, est une variété prisée pour son goût intensément sucré, son arôme floral unique et sa chair juteuse. Issues des vergers fertiles de la région de Marrakech, ces oranges bénéficient d'un terroir exceptionnel, où climat et sol s'allient pour offrir un fruit d'une qualité remarquable. Douces, peu acides, et naturellement parfumées, elles sont parfaites aussi bien en jus qu'à croquer à pleines dents. Grâce à notre partenariat direct avec des agriculteurs locaux, nous garantissons des oranges fraîchement récoltées à maturité optimale, manipulées avec soin pour préserver toutes leurs qualités gustatives et nutritionnelles.",
+        en: "Marrakech orange, grown under Morocco's generous sun, is a prized variety known for its intensely sweet taste, unique floral aroma, and juicy flesh. From the fertile orchards of the Marrakech region, these oranges benefit from an exceptional terroir, where climate and soil combine to offer a fruit of remarkable quality. Sweet, low in acidity, and naturally fragrant, they are perfect for juicing or eating fresh. Thanks to our direct partnership with local farmers, we guarantee oranges freshly harvested at optimal maturity, handled with care to preserve all their taste and nutritional qualities.",
+        zh: "摩洛哥马拉喀什橙子，在摩洛哥慷慨的阳光下种植，以其浓郁甜美的口感、独特的花香和多汁的果肉而备受推崇。来自马拉喀什地区肥沃的果园，这些橙子得益于卓越的风土条件，气候和土壤结合提供了品质非凡的水果。甜美、低酸度、自然芳香，无论是榨汁还是新鲜食用都是完美的选择。得益于我们与当地农民的直接合作，我们保证橙子在最佳成熟度时新鲜采摘，精心处理以保留所有味道和营养品质。"
+      },
+      scientificInfo: {
+        fr: "Nom scientifique : Citrus sinensis. Code douanier : HS0805102200. Variétés principales : Maroc Late (idéale pour le jus), Navel (à chair fondante), Salustiana (très sucrée, sans pépins). Poids moyen : 150–250 g selon la variété. Teneur en jus : entre 45 et 55 %.",
+        en: "Scientific name: Citrus sinensis. Customs code: HS0805102200. Main varieties: Maroc Late (ideal for juice), Navel (with melting flesh), Salustiana (very sweet, seedless). Average weight: 150–250 g depending on the variety. Juice content: between 45 and 55%.",
+        zh: "科学名称：甜橙。海关编码：HS0805102200。主要品种：摩洛哥晚熟（适合榨汁），纳维尔（肉质软），萨鲁斯蒂亚娜（非常甜，无籽）。平均重量：根据品种150-250克。果汁含量：45-55%之间。"
+      },
+      varieties: {
+        fr: [
+          "Maroc Late : excellente pour le jus, récoltée de février à mai, fruit sphérique, peau fine, chair très juteuse.",
+          "Navel de Marrakech : idéale pour la consommation fraîche, récoltée de novembre à février, chair douce et fondante, sans pépins.",
+          "Salustiana : à la fois juteuse et sucrée, récoltée de décembre à mars, peau fine, peu d'acidité."
+        ],
+        en: [
+          "Maroc Late: excellent for juice, harvested from February to May, spherical fruit, thin skin, very juicy flesh.",
+          "Marrakech Navel: ideal for fresh consumption, harvested from November to February, sweet and melting flesh, seedless.",
+          "Salustiana: both juicy and sweet, harvested from December to March, thin skin, low acidity."
+        ],
+        zh: [
+          "摩洛哥晚熟：适合榨汁，2月至5月收获，球形水果，皮薄，果肉多汁。",
+          "马拉喀什纳维尔：适合新鲜食用，11月至2月收获，甜美软嫩的果肉，无籽。",
+          "萨鲁斯蒂亚娜：既多汁又甜美，12月至3月收获，皮薄，酸度低。"
+        ]
+      },
+      production: {
+        fr: "La région de Marrakech est l'une des zones agrumicoles les plus importantes du Maroc. La récolte est réalisée manuellement pour éviter d'abîmer les fruits. Les oranges sont ensuite stockées dans des chambres froides pour préserver leur fraîcheur.",
+        en: "The Marrakech region is one of the most important citrus areas in Morocco. Harvesting is done manually to avoid damaging the fruits. The oranges are then stored in cold rooms to preserve their freshness.",
+        zh: "马拉喀什地区是摩洛哥最重要的柑橘产区之一。收获是手工完成的，以避免损坏水果。然后将橙子存放在冷藏室中以保持新鲜度。"
+      },
+      storage: {
+        fr: "Les oranges sont conditionnées en caisses ou en filets de 10 à 15 kg. Elles sont stockées dans des chambres froides à une température de 4-7°C et une humidité relative de 90-95% pour une durée de conservation optimale.",
+        en: "Oranges are packaged in crates or nets of 10 to 15 kg. They are stored in cold rooms at a temperature of 4-7°C and relative humidity of 90-95% for optimal shelf life.",
+        zh: "橙子包装在10至15公斤的箱子或网袋中。它们存放在4至7°C温度和90-95%相对湿度的冷藏室中，以获得最佳保存期。"
+      },
+      benefits: {
+        fr: ["Riche en vitamine C et en antioxydants", "Renforce le système immunitaire", "Favorise une peau saine", "Aide à la digestion", "Faible en calories, hydratante et rafraîchissante"],
+        en: ["Rich in vitamin C and antioxidants", "Strengthens the immune system", "Promotes healthy skin", "Aids digestion", "Low in calories, hydrating and refreshing"],
+        zh: ["富含维生素C和抗氧化剂", "增强免疫系统", "促进健康的皮肤", "帮助消化", "低热量，补水和清爽"]
+      },
+      applications: {
+        fr: ["Jus d'orange pressé", "Salades de fruits et desserts", "Cuisine marocaine (ex : tajines à l'orange)", "Zestes pour pâtisserie", "Marmelades et confitures artisanales"],
+        en: ["Freshly squeezed orange juice", "Fruit salads and desserts", "Moroccan cuisine (e.g., orange tajines)", "Zest for pastry", "Artisanal marmalades and jams"],
+        zh: ["鲜榨橙汁", "水果沙拉和甜点", "摩洛哥料理（如：橙子塔吉锅）", "用于糕点的橙皮", "手工橙子酱和果酱"]
+      },
+      images: [
+        'https://img.freepik.com/free-photo/oranges-market-marrakech_23-2148129793.jpg'
+      ]
+    },
+    'niger-mango': {
+      id: 'niger-mango',
+      name: t('nigerMango'),
+      description: t('nigerMangoDesc'),
+      longDescription: {
+        fr: "La mangue du Niger, joyau tropical de l'Afrique de l'Ouest, séduit par sa chair fondante, son goût délicieusement sucré et son parfum envoûtant. Cultivée principalement dans les régions de Dosso, Tillabéri et Niamey, cette mangue bénéficie d'un climat chaud et sec favorable à sa maturation naturelle. Récoltée à la main à pleine maturité, elle est appréciée aussi bien en consommation fraîche qu'en transformation (jus, purée, séchage). Grâce à une filière de production en pleine structuration, la mangue nigérienne se distingue par sa qualité, sa traçabilité et son excellent potentiel d'exportation.",
+        en: "Niger's mango, a tropical jewel of West Africa, captivates with its melting flesh, deliciously sweet taste, and enchanting fragrance. Cultivated mainly in the Dosso, Tillabéri, and Niamey regions, this mango benefits from a hot, dry climate favorable to its natural ripening. Hand-harvested at full maturity, it is appreciated both for fresh consumption and processing (juice, purée, drying). Thanks to a well-structured production chain, Nigerien mango stands out for its quality, traceability, and excellent export potential.",
+        zh: "尼日尔芒果，西非的热带珍宝，以其软嫩的果肉、美味甜美的口感和迷人的香气吸引人。主要在多索、蒂拉贝里和尼亚美地区种植，这种芒果得益于有利于其自然成熟的炎热干燥气候。在完全成熟时手工采摘，既可新鲜食用，也可加工（果汁、果泥、干制）。得益于结构完善的生产链，尼日尔芒果以其质量、可追溯性和出色的出口潜力而脱颖而出。"
+      },
+      scientificInfo: {
+        fr: "Nom scientifique : Mangifera indica. Code douanier : HS0804500000. Principales variétés : Kent, Keitt, Amélie. Poids moyen : entre 300 et 600 g. Saison : avril à juillet. Méthode de culture : agriculture conventionnelle ou biologique, sans traitements post-récolte chimiques pour l'export.",
+        en: "Scientific name: Mangifera indica.
