@@ -43,6 +43,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -60,11 +61,32 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-wolf-brown relative inline-block;
+    @apply text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-wolf-brown relative inline-block;
   }
 
   .section-title::after {
     content: '';
     @apply absolute bottom-0 left-0 w-full h-1 bg-wolf-green opacity-70 rounded;
   }
+}
+
+/* Remove App.css styles that might conflict with our responsive design */
+#root {
+  @apply w-full max-w-full m-0 p-0;
+}
+
+/* Make images responsive by default */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Improve touch targets on mobile */
+button, 
+a {
+  @apply min-h-[44px] md:min-h-[unset];
+}
+
+/* Add smooth scrolling */
+html {
+  @apply scroll-smooth;
 }
