@@ -4,6 +4,7 @@ import React, { Component, ErrorInfo, ReactNode } from 'react';
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
+  onError?: (error: Error, errorInfo: ErrorInfo) => void;
 }
 
 interface State {
@@ -28,13 +29,12 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    // You can log the error to an error reporting service here
     console.error('ErrorBoundary caught an error:', error, errorInfo);
+    this.props.onError?.(error, errorInfo);
   }
 
   render(): ReactNode {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
       return this.props.fallback || (
         <div className="error-boundary-fallback p-4 bg-red-50 text-red-800 rounded-md">
           <h2 className="text-xl font-bold mb-2">Something went wrong</h2>
@@ -44,6 +44,12 @@ class ErrorBoundary extends Component<Props, State> {
               {this.state.error?.toString()}
             </p>
           </details>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+          >
+            Reload Page
+          </button>
         </div>
       );
     }
