@@ -22,6 +22,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
+    console.error('Error caught by ErrorBoundary:', error);
     return {
       hasError: true,
       error
@@ -45,10 +46,20 @@ class ErrorBoundary extends Component<Props, State> {
             </p>
           </details>
           <button
-            onClick={() => window.location.reload()}
+            onClick={() => {
+              // Clear cache and reload to fix potential dependency issues
+              if ('caches' in window) {
+                caches.keys().then(names => {
+                  names.forEach(name => {
+                    caches.delete(name);
+                  });
+                });
+              }
+              window.location.reload();
+            }}
             className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
           >
-            Reload Page
+            Reload Page (Clear Cache)
           </button>
         </div>
       );

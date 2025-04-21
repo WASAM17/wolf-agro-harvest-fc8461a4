@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import ErrorBoundary from '../ErrorBoundary';
@@ -17,7 +17,9 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="flex-grow w-full pt-16 md:pt-20">
         <div className="w-full">
           <ErrorBoundary>
-            {children}
+            <Suspense fallback={<div className="p-4 text-center">Loading content...</div>}>
+              {children}
+            </Suspense>
           </ErrorBoundary>
         </div>
       </main>

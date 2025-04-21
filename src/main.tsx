@@ -18,6 +18,17 @@ const initializeApp = () => {
     // Create a root with React 18's createRoot
     const root = createRoot(rootElement);
     
+    // Clear any existing Vite-related cache that might cause issues
+    if ('caches' in window) {
+      caches.keys().then(names => {
+        names.forEach(name => {
+          if (name.includes('vite')) {
+            caches.delete(name);
+          }
+        });
+      });
+    }
+    
     // Render the app with error boundary
     root.render(
       <StrictMode>
@@ -42,8 +53,8 @@ const initializeApp = () => {
         <pre style="background: #f0f0f0; padding: 10px; border-radius: 5px; text-align: left; margin-top: 20px; overflow: auto;">
           ${error instanceof Error ? error.message : 'Unknown error'}
         </pre>
-        <button onclick="window.location.reload()" style="margin-top: 20px; padding: 8px 16px; background: #e53e3e; color: white; border: none; border-radius: 4px; cursor: pointer;">
-          Reload Page
+        <button onclick="window.location.reload(true)" style="margin-top: 20px; padding: 8px 16px; background: #e53e3e; color: white; border: none; border-radius: 4px; cursor: pointer;">
+          Reload Page (Clear Cache)
         </button>
       </div>
     `;

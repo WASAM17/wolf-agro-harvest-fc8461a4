@@ -10,16 +10,27 @@ import Admin from "./pages/Admin";
 import Product from "./pages/Product";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./ErrorBoundary";
+import { Suspense, lazy } from "react";
 
-// Create a new query client instance
+// Create a new query client instance with more robust error handling
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: 1,
-      refetchOnWindowFocus: false
+      refetchOnWindowFocus: false,
+      useErrorBoundary: true
     }
   }
 });
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="text-center">
+      <p className="text-lg">Loading...</p>
+    </div>
+  </div>
+);
 
 const App = () => (
   <ErrorBoundary>
@@ -27,13 +38,27 @@ const App = () => (
       <LanguageProvider>
         <TooltipProvider>
           <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/product/:id" element={<Product />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<LoadingFallback />}>
+              <Routes>
+                <Route path="/" element={
+                  <ErrorBoundary>
+                    <Index />
+                  </ErrorBoundary>
+                } />
+                <Route path="/admin" element={
+                  <ErrorBoundary>
+                    <Admin />
+                  </ErrorBoundary>
+                } />
+                <Route path="/product/:id" element={
+                  <ErrorBoundary>
+                    <Product />
+                  </ErrorBoundary>
+                } />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </BrowserRouter>
           <Toaster />
           <Sonner />
