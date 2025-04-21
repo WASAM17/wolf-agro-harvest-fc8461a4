@@ -34,6 +34,22 @@ class ErrorBoundary extends Component<Props, State> {
     this.props.onError?.(error, errorInfo);
   }
 
+  clearCachesAndReload = async () => {
+    // Clear all browser caches
+    if ('caches' in window) {
+      try {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(key => caches.delete(key)));
+        console.log('Caches cleared successfully');
+      } catch (err) {
+        console.error('Failed to clear caches:', err);
+      }
+    }
+    
+    // Force reload the page with cache clear
+    window.location.reload();
+  };
+
   render(): ReactNode {
     if (this.state.hasError) {
       return this.props.fallback || (
@@ -45,22 +61,20 @@ class ErrorBoundary extends Component<Props, State> {
               {this.state.error?.toString()}
             </p>
           </details>
-          <button
-            onClick={() => {
-              // Clear cache and reload to fix potential dependency issues
-              if ('caches' in window) {
-                caches.keys().then(names => {
-                  names.forEach(name => {
-                    caches.delete(name);
-                  });
-                });
-              }
-              window.location.reload();
-            }}
-            className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-          >
-            Reload Page (Clear Cache)
-          </button>
+          <div className="mt-4 flex flex-col sm:flex-row gap-2">
+            <button
+              onClick={this.clearCachesAndReload}
+              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+            >
+              Reload Page (Clear Cache)
+            </button>
+            <button
+              onClick={() => this.setState({ hasError: false, error: null })}
+              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+            >
+              Try to Recover
+            </button>
+          </div>
         </div>
       );
     }

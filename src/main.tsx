@@ -5,9 +5,27 @@ import App from './App.tsx';
 import './index.css';
 import ErrorBoundary from './ErrorBoundary';
 
+// Function to clear cache more aggressively
+const clearCaches = async () => {
+  if ('caches' in window) {
+    try {
+      const keys = await caches.keys();
+      await Promise.all(
+        keys.map(key => caches.delete(key))
+      );
+      console.log('All caches cleared successfully');
+    } catch (err) {
+      console.error('Failed to clear caches:', err);
+    }
+  }
+};
+
 // Function to initialize the app with proper error handling
-const initializeApp = () => {
+const initializeApp = async () => {
   try {
+    // Clear caches before initialization to avoid dependency issues
+    await clearCaches();
+    
     // Make sure we have the root element
     const rootElement = document.getElementById('root');
 
@@ -17,17 +35,6 @@ const initializeApp = () => {
 
     // Create a root with React 18's createRoot
     const root = createRoot(rootElement);
-    
-    // Clear any existing Vite-related cache that might cause issues
-    if ('caches' in window) {
-      caches.keys().then(names => {
-        names.forEach(name => {
-          if (name.includes('vite')) {
-            caches.delete(name);
-          }
-        });
-      });
-    }
     
     // Render the app with error boundary
     root.render(
@@ -43,6 +50,9 @@ const initializeApp = () => {
     );
   } catch (error) {
     console.error('Failed to initialize the application:', error);
+    
+    // Attempt to clear caches if initialization fails
+    await clearCaches();
     
     // Fallback UI if React fails to initialize
     const rootElement = document.getElementById('root') || document.body;
@@ -62,4 +72,15 @@ const initializeApp = () => {
 };
 
 // Initialize the application
-initializeApp();
+initializeApp().catch(error => {
+  console.error('Critical initialization error:', error);
+  document.body.innerHTML = `
+    <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+      <h2>Critical Application Error</h2>
+      <p>The application failed to initialize. Please try clearing your browser cache and refreshing the page.</p>
+      <button onclick="location.reload(true)" style="margin-top: 20px; padding: 8px 16px; background: #e53e3e; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Reload with Cache Clear
+      </button>
+    </div>
+  `;
+});

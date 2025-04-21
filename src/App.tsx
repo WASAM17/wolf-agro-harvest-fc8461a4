@@ -18,7 +18,16 @@ const queryClient = new QueryClient({
     queries: {
       retry: 1,
       refetchOnWindowFocus: false,
-      useErrorBoundary: true
+      // Using meta for error handling instead of the non-existent useErrorBoundary
+      meta: {
+        errorHandling: 'boundary'
+      }
+    },
+    mutations: {
+      // Use onError for mutations
+      onError: (error) => {
+        console.error('Mutation error:', error);
+      }
     }
   }
 });
