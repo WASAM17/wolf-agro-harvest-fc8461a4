@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -131,7 +130,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-wolf-brown">{t('phone')}</h4>
-                    <p className="text-gray-600">+227 20 17 04 01</p>
+                    <p className="text-gray-600">+227 98 08 35 77</p>
                   </div>
                 </div>
                 

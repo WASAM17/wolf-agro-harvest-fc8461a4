@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'fr' | 'en' | 'zh';
@@ -139,6 +138,11 @@ const translations: Translations = {
   message: { fr: 'Message', en: 'Message', zh: '留言' },
   send: { fr: 'Envoyer', en: 'Send', zh: '发送' },
   phone: { fr: 'Téléphone', en: 'Phone', zh: '电话' },
+  phoneValue: { 
+    fr: '+227 98 08 35 77', 
+    en: '+227 98 08 35 77', 
+    zh: '+227 98 08 35 77' 
+  },
   address: { fr: 'Adresse', en: 'Address', zh: '地址' },
   addressValue: { 
     fr: '334 avenue du Mounia, Niamey, Niger', 
