@@ -163,7 +163,14 @@ const translations: Translations = {
   login: { fr: 'Connexion', en: 'Login', zh: '登录' },
   username: { fr: 'Nom d\'utilisateur', en: 'Username', zh: '用户名' },
   password: { fr: 'Mot de passe', en: 'Password', zh: '密码' },
-  loginBtn: { fr: 'Se connecter', en: 'Login', zh: '登录' }
+  loginBtn: { fr: 'Se connecter', en: 'Login', zh: '登录' },
+  
+  // Contact Section
+  contactEmail: { 
+    fr: 'contact@wolfagroservices.com', 
+    en: 'contact@wolfagroservices.com', 
+    zh: 'contact@wolfagroservices.com' 
+  }
 };
 
 type LanguageContextType = {
