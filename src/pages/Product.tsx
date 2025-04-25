@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -52,33 +53,10 @@ interface OnionProduct extends ProductCommon {
   };
 }
 
-interface OrangeProduct extends ProductCommon {
-  varieties: {
-    fr: string[];
-    en: string[];
-    zh: string[];
-  };
-}
+// This type of ProductType should now only include the products we have
+type ProductType = ProductCommon | OnionProduct;
 
-interface MangoProduct extends ProductCommon {
-  varieties: {
-    fr: string[];
-    en: string[];
-    zh: string[];
-  };
-}
-
-interface PlantainProduct extends ProductCommon {
-  varieties: {
-    fr: string[];
-    en: string[];
-    zh: string[];
-  };
-}
-
-type ProductType = ProductCommon | OnionProduct | OrangeProduct | MangoProduct | PlantainProduct;
-
-const hasVarieties = (product: ProductType): product is OnionProduct | OrangeProduct | MangoProduct | PlantainProduct => {
+const hasVarieties = (product: ProductType): product is OnionProduct => {
   return 'varieties' in product;
 };
 
@@ -259,7 +237,10 @@ const Product = () => {
     }
   };
 
-  if (!product) {
+  // Get the specific product based on the id from URL parameter
+  const selectedProduct = products[id as string];
+
+  if (!selectedProduct) {
     return (
       <Layout>
         <div className="py-20 min-h-screen">
@@ -278,21 +259,21 @@ const Product = () => {
   const handleContact = () => {
     toast({
       title: "Contact Request",
-      description: `Thank you for your interest in our ${product.name}. We'll get back to you soon!`,
+      description: `Thank you for your interest in our ${selectedProduct.name}. We'll get back to you soon!`,
     });
   };
 
-  const currentLang = language as keyof typeof product.longDescription;
+  const currentLang = language as keyof typeof selectedProduct.longDescription;
 
   const renderAdditionalInfo = () => {
-    if (hasVarieties(product)) {
+    if (hasVarieties(selectedProduct)) {
       return (
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-wolf-brown mb-3">
             {language === 'fr' ? 'Variétés' : language === 'en' ? 'Varieties' : '品种'}:
           </h2>
           <ul className="list-disc list-inside mb-6 text-gray-600">
-            {product.varieties[currentLang].map((variety, index) => (
+            {selectedProduct.varieties[currentLang].map((variety, index) => (
               <li key={index} className="mb-3">{variety}</li>
             ))}
           </ul>
@@ -311,8 +292,8 @@ const Product = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="h-[300px] md:h-full">
                   <ProductImageCarousel 
-                    images={product.images} 
-                    productName={product.name} 
+                    images={selectedProduct.images} 
+                    productName={selectedProduct.name} 
                   />
                 </div>
                 
@@ -322,11 +303,11 @@ const Product = () => {
                   </Link>
                   
                   <h1 className="text-3xl font-bold text-wolf-brown mb-3">
-                    {product.name}
+                    {selectedProduct.name}
                   </h1>
                   
                   <p className="text-gray-600 mb-6">
-                    {product.longDescription[currentLang]}
+                    {selectedProduct.longDescription[currentLang]}
                   </p>
                   
                   <div className="bg-wolf-beige/20 p-4 rounded-md mb-6">
@@ -334,7 +315,7 @@ const Product = () => {
                       {language === 'fr' ? 'Informations Scientifiques' : language === 'en' ? 'Scientific Information' : '科学信息'}:
                     </h2>
                     <p className="text-gray-600 mb-2">
-                      {product.scientificInfo[currentLang]}
+                      {selectedProduct.scientificInfo[currentLang]}
                     </p>
                   </div>
                   
@@ -348,7 +329,7 @@ const Product = () => {
                         {language === 'fr' ? 'Production' : language === 'en' ? 'Production' : '生产'}:
                       </h2>
                       <p className="text-gray-600 mb-4">
-                        {product.production[currentLang]}
+                        {selectedProduct.production[currentLang]}
                       </p>
                     </div>
                     
@@ -357,7 +338,7 @@ const Product = () => {
                         {language === 'fr' ? 'Stockage' : language === 'en' ? 'Storage' : '储存'}:
                       </h2>
                       <p className="text-gray-600 mb-4">
-                        {product.storage[currentLang]}
+                        {selectedProduct.storage[currentLang]}
                       </p>
                     </div>
                   </div>
@@ -370,7 +351,7 @@ const Product = () => {
                         {language === 'fr' ? 'Bénéfices' : language === 'en' ? 'Benefits' : '好处'}:
                       </h2>
                       <ul className="list-disc list-inside text-gray-600">
-                        {product.benefits[currentLang].map((benefit, index) => (
+                        {selectedProduct.benefits[currentLang].map((benefit, index) => (
                           <li key={index} className="mb-1">{benefit}</li>
                         ))}
                       </ul>
@@ -381,7 +362,7 @@ const Product = () => {
                         {language === 'fr' ? 'Applications' : language === 'en' ? 'Applications' : '应用'}:
                       </h2>
                       <ul className="list-disc list-inside text-gray-600">
-                        {product.applications[currentLang].map((application, index) => (
+                        {selectedProduct.applications[currentLang].map((application, index) => (
                           <li key={index} className="mb-1">{application}</li>
                         ))}
                       </ul>
@@ -396,7 +377,7 @@ const Product = () => {
                       {t('contactUs')}
                     </Button>
                     <a 
-                      href="https://wa.me/22720170401" 
+                      href="https://wa.me/22798083577" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
