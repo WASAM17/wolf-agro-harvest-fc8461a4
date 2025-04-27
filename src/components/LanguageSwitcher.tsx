@@ -1,38 +1,30 @@
 
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex space-x-2">
-      <Button
-        variant={language === 'fr' ? "default" : "outline"}
-        size="sm"
-        onClick={() => setLanguage('fr')}
-        className="text-xs font-medium"
-      >
-        🇫🇷 FR
-      </Button>
-      <Button
-        variant={language === 'en' ? "default" : "outline"}
-        size="sm"
-        onClick={() => setLanguage('en')}
-        className="text-xs font-medium"
-      >
-        🇬🇧 EN
-      </Button>
-      <Button
-        variant={language === 'zh' ? "default" : "outline"}
-        size="sm"
-        onClick={() => setLanguage('zh')}
-        className="text-xs font-medium"
-      >
-        🇨🇳 ZH
-      </Button>
-    </div>
+    <Select value={language} onValueChange={setLanguage}>
+      <SelectTrigger className="w-[90px]">
+        <SelectValue>
+          {language === 'fr' ? '🇫🇷 FR' : language === 'en' ? '🇬🇧 EN' : '🇨🇳 ZH'}
+        </SelectValue>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="fr">🇫🇷 FR</SelectItem>
+        <SelectItem value="en">🇬🇧 EN</SelectItem>
+        <SelectItem value="zh">🇨🇳 ZH</SelectItem>
+      </SelectContent>
+    </Select>
   );
 };
 
