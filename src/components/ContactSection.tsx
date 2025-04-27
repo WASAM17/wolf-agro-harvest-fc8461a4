@@ -155,7 +155,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-wolf-brown">{t('address')}</h4>
-                    <p className="text-gray-600">{t('addressValue')}</p>
+                    <p className="text-gray-600">334 Avenue du Mounio, Niamey, Niger</p>
                   </div>
                 </div>
               </div>
