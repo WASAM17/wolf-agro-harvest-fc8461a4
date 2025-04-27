@@ -3,6 +3,7 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface Product {
   id: string;
@@ -13,6 +14,14 @@ interface Product {
 
 const ProductsSection = () => {
   const { t } = useLanguage();
+
+  // Function to scroll to top when navigating to product detail
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const products: Product[] = [
     {
@@ -70,7 +79,7 @@ const ProductsSection = () => {
                 <p className="text-gray-600 mb-4 line-clamp-3 text-sm md:text-base">
                   {product.description}
                 </p>
-                <Link to={`/product/${product.id}`} className="block">
+                <Link to={`/product/${product.id}`} className="block" onClick={scrollToTop}>
                   <Button 
                     variant="outline" 
                     className="w-full border-wolf-green text-wolf-green hover:bg-wolf-green hover:text-white transition-colors text-sm md:text-base"
