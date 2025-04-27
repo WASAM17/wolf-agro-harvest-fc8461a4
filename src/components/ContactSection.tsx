@@ -84,7 +84,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="john@example.com"
+                    placeholder="wolfagroservices@gmail.com"
                     className="w-full"
                   />
                 </div>
@@ -142,7 +142,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-wolf-brown">Email</h4>
-                    <p className="text-gray-600">contact@wolfagroservices.com</p>
+                    <p className="text-gray-600">wolfagroservices@gmail.com</p>
                   </div>
                 </div>
                 
