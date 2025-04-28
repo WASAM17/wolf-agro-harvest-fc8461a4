@@ -1,9 +1,8 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface Product {
   id: string;
@@ -22,6 +21,12 @@ const ProductsSection = () => {
       behavior: 'smooth'
     });
   };
+
+  // This ensures the page starts at the top when navigating directly to the page
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const products: Product[] = [
     {
@@ -79,7 +84,11 @@ const ProductsSection = () => {
                 <p className="text-gray-600 mb-4 line-clamp-3 text-sm md:text-base">
                   {product.description}
                 </p>
-                <Link to={`/product/${product.id}`} className="block" onClick={scrollToTop}>
+                <Link 
+                  to={`/product/${product.id}`} 
+                  className="block" 
+                  onClick={scrollToTop}
+                >
                   <Button 
                     variant="outline" 
                     className="w-full border-wolf-green text-wolf-green hover:bg-wolf-green hover:text-white transition-colors text-sm md:text-base"

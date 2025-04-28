@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -53,7 +52,6 @@ interface OnionProduct extends ProductCommon {
   };
 }
 
-// This type of ProductType should now only include the products we have
 type ProductType = ProductCommon | OnionProduct;
 
 const hasVarieties = (product: ProductType): product is OnionProduct => {
@@ -64,6 +62,11 @@ const Product = () => {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const products: Record<string, ProductType> = {
     'sesame': {
@@ -111,7 +114,7 @@ const Product = () => {
       longDescription: {
         fr: "Les arachides du Niger sont cultivées dans les zones fertiles du pays et se distinguent par leur saveur riche et leur texture croquante. Notre processus de récolte et de séchage soigneux préserve leur qualité naturelle et leur valeur nutritionnelle. Nos arachides sont disponibles sous différentes formes : en coque, décortiquées, ou transformées en huile ou en pâte. Elles constituent une excellente source de protéines, de fibres et de graisses saines, ce qui en fait un aliment nutritif et polyvalent. Nous garantissons des produits exempts de contaminants et conformes aux normes internationales de sécurité alimentaire.",
         en: "Niger's peanuts are grown in the country's fertile areas and stand out for their rich flavor and crunchy texture. Our careful harvesting and drying process preserves their natural quality and nutritional value. Our peanuts are available in various forms: in-shell, shelled, or processed into oil or paste. They are an excellent source of protein, fiber, and healthy fats, making them a nutritious and versatile food. We guarantee products free from contaminants and compliant with international food safety standards.",
-        zh: "尼日尔的花生在该国肥沃的地区种植，以其丰富的味道和脆脆的质地而脱颖而出。我们精心的收获和干燥过程保留了它们的天然品质和营养价值。我们的花生有多种形式：带壳、去壳或加工成油或糊状。它们是蛋白质、纤维和健康脂肪的优秀来源，使其成为营养丰富且多用途的食品。我们保证产品不含污染物，符合国际食品安全标准。"
+        zh: "尼日尔的花生在该国肥沃的地区种植��以其丰富的味道和脆脆的质地而脱颖而出。我们精心的收获和干燥过程保留了它们的天然品质和营养价值。我们的花生有多种形式：带壳、去壳或加工成油或糊状。它们是蛋白质、纤维和健康脂肪的优秀来源，使其成为营养丰富且多用途的食品。我们保证产品不含污染物，符合国际食品安全标准。"
       },
       scientificInfo: {
         fr: "L'arachide est une plante de la famille des légumineuses, originaire d'Amérique du Sud, adaptée aux climats chauds. Elle produit des gousses souterraines contenant des graines comestibles riches en huile.",
@@ -237,7 +240,6 @@ const Product = () => {
     }
   };
 
-  // Get the specific product based on the id from URL parameter
   const selectedProduct = products[id as string];
 
   if (!selectedProduct) {
