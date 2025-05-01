@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   Carousel,
@@ -38,44 +37,28 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
   return (
     <Carousel className="w-full">
       <CarouselContent>
-        {images.length === 0 || allImagesHaveErrors ? (
-          <CarouselItem>
-            <div className="h-[300px] md:h-[400px] w-full relative flex items-center justify-center bg-gray-100">
-              <p className="text-gray-500">Image non disponible</p>
+        {images.map((image, index) => (
+          <CarouselItem key={index}>
+            <div className="h-[300px] md:h-[400px] w-full relative">
+              {loadingStates[index] && !errorStates[index] && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Skeleton className="h-full w-full absolute" />
+                </div>
+              )}
+              
+
+                <img
+                  src={image}
+                  alt={`${productName} - image ${index + 1}`}
+                  className={`absolute w-full h-full object-cover transition-opacity ${
+                    loadingStates[index] ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  onLoad={() => handleImageLoad(index)}
+                  onError={() => handleImageError(index)}
+                />
             </div>
           </CarouselItem>
-        ) : (
-          images.map((image, index) => (
-            <CarouselItem key={index}>
-              <div className="h-[300px] md:h-[400px] w-full relative">
-                {loadingStates[index] && !errorStates[index] && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Skeleton className="h-full w-full absolute" />
-                  </div>
-                )}
-                
-                {!errorStates[index] && (
-                  <img
-                    src={image}
-                    alt={`${productName} - image ${index + 1}`}
-                    className={`absolute w-full h-full object-cover transition-opacity ${
-                      loadingStates[index] ? 'opacity-0' : 'opacity-100'
-                    }`}
-                    onLoad={() => handleImageLoad(index)}
-                    onError={() => handleImageError(index)}
-                    crossOrigin="anonymous"
-                  />
-                )}
-                
-                {errorStates[index] && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                    <p className="text-gray-500">Image non disponible</p>
-                  </div>
-                )}
-              </div>
-            </CarouselItem>
-          ))
-        )}
+        ))}
       </CarouselContent>
       {images.length > 1 && !allImagesHaveErrors && (
         <>
