@@ -18,45 +18,50 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
   const [loadingStates, setLoadingStates] = useState<Record<number, boolean>>(
     Object.fromEntries(images.map((_, index) => [index, true]))
   );
+  const [errorStates, setErrorStates] = useState<Record<number, boolean>>(
+    Object.fromEntries(images.map((_, index) => [index, false]))
+  );
 
   const handleImageLoad = (index: number) => {
     setLoadingStates(prev => ({ ...prev, [index]: false }));
   };
 
+  const handleImageError = (index: number) => {
+    setLoadingStates(prev => ({ ...prev, [index]: false }));
+    setErrorStates(prev => ({ ...prev, [index]: true }));
+  };
+
+  // If there are no valid images, show a fallback
+  const allImagesHaveErrors = images.length > 0 && 
+    Object.values(errorStates).filter(Boolean).length === images.length;
+
   return (
     <Carousel className="w-full">
       <CarouselContent>
-        {images.length === 0 ? (
-          <CarouselItem>
-            <div className="h-[300px] md:h-[400px] w-full relative flex items-center justify-center bg-gray-100">
-              <p className="text-gray-500">No images available</p>
+        {images.map((image, index) => (
+          <CarouselItem key={index}>
+            <div className="h-[300px] md:h-[400px] w-full relative">
+              {loadingStates[index] && !errorStates[index] && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Skeleton className="h-full w-full absolute" />
+                </div>
+              )}
+              
+              <img
+                src={image}
+                alt={`${productName} - image ${index + 1}`}
+                className={`absolute w-full h-full object-cover transition-opacity ${
+                  loadingStates[index] ? 'opacity-0' : 'opacity-100'
+                }`}
+                onLoad={() => handleImageLoad(index)}
+                onError={() => handleImageError(index)}
+                crossOrigin="anonymous"
+              />
             </div>
           </CarouselItem>
-        ) : (
-          images.map((image, index) => (
-            <CarouselItem key={index}>
-              <div className="h-[300px] md:h-[400px] w-full relative">
-                {loadingStates[index] && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Skeleton className="h-full w-full absolute" />
-                  </div>
-                )}
-                
-                <img
-                  src={image}
-                  alt={`${productName} - image ${index + 1}`}
-                  className={`absolute w-full h-full object-cover transition-opacity ${
-                    loadingStates[index] ? 'opacity-0' : 'opacity-100'
-                  }`}
-                  onLoad={() => handleImageLoad(index)}
-                  crossOrigin="anonymous"
-                />
-              </div>
-            </CarouselItem>
-          ))
-        )}
+        ))}
       </CarouselContent>
-      {images.length > 1 && (
+      {images.length > 1 && !allImagesHaveErrors && (
         <>
           <CarouselPrevious className="left-2" />
           <CarouselNext className="right-2" />
