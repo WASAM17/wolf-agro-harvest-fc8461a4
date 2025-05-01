@@ -46,7 +46,7 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
                 </div>
               )}
               
-
+              {!errorStates[index] && (
                 <img
                   src={image}
                   alt={`${productName} - image ${index + 1}`}
@@ -56,6 +56,13 @@ const ProductImageCarousel = ({ images, productName }: ProductImageCarouselProps
                   onLoad={() => handleImageLoad(index)}
                   onError={() => handleImageError(index)}
                 />
+              )}
+              
+              {errorStates[index] && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                  <p className="text-gray-500">Image non disponible</p>
+                </div>
+              )}
             </div>
           </CarouselItem>
         ))}
