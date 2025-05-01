@@ -142,7 +142,7 @@ const Product = () => {
         zh: ["直接食用", "烹饪用花生油", "花生酱", "食品工业原料", "动物饲料"]
       },
       images: [
-        'https://www.planetesante.ch/var/ezdemo_site/storage/images/media/images/00-rubriques/nutrition-alimentation/allergies_arachide/33161-1-eng-GB/allergies_arachide_gallerylarge.jpg'
+        'public/lovable-uploads/1d22ad79-6b7b-4b36-a3f2-deba7c53a083.png'
       ]
     },
     'gum-arabic': {
@@ -180,7 +180,7 @@ const Product = () => {
         zh: ["饮料中的稳定剂", "糖果中的包衣剂", "药片中的粘合剂", "化妆品中的乳化剂", "印刷油墨和粘合剂"]
       },
       images: [
-        'https://www.anipex.org/images/gum-arabic-1.jpg'
+        'public/lovable-uploads/985a57bd-c4c2-4097-be74-fcc90b3981e8.png'
       ]
     },
     'purple-onion': {
@@ -235,7 +235,7 @@ const Product = () => {
         zh: ["地中海料理", "传统非洲菜肴", "沙拉和调味品", "脱水产品", "果泥和酱汁"]
       },
       images: [
-        'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
+        'public/lovable-uploads/3a1402e8-1769-45e9-966a-96cfa22ede6a.png'
       ]
     }
   };

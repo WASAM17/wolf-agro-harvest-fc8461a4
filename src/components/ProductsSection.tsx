@@ -39,19 +39,19 @@ const ProductsSection = () => {
       id: 'peanuts',
       name: t('peanuts'),
       description: t('peanutsDesc'),
-      image: 'https://www.planetesante.ch/var/ezdemo_site/storage/images/media/images/00-rubriques/nutrition-alimentation/allergies_arachide/33161-1-eng-GB/allergies_arachide_gallerylarge.jpg'
+      image: 'public/lovable-uploads/1d22ad79-6b7b-4b36-a3f2-deba7c53a083.png'
     },
     {
       id: 'gum-arabic',
       name: t('gumArabic'),
       description: t('gumArabicDesc'),
-      image: 'https://www.anipex.org/images/gum-arabic-1.jpg'
+      image: 'public/lovable-uploads/985a57bd-c4c2-4097-be74-fcc90b3981e8.png'
     },
     {
       id: 'purple-onion',
       name: t('onion'),
       description: t('onionDesc'),
-      image: 'https://www.investirauburkina.net/images/articles/culture-maraichere-oignon-rentable.jpg'
+      image: 'public/lovable-uploads/3a1402e8-1769-45e9-966a-96cfa22ede6a.png'
     }
   ];
 
