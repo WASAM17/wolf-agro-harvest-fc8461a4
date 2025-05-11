@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll'; // Import Link from react-scroll
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -51,18 +51,42 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/#hero" className="text-wolf-brown hover:text-wolf-green font-medium">
+          <ScrollLink 
+            to="hero" 
+            smooth={true} 
+            duration={500} 
+            offset={-80} 
+            className="text-wolf-brown hover:text-wolf-green font-medium cursor-pointer"
+          >
             {t('home')}
-          </Link>
-          <Link to="/#about" className="text-wolf-brown hover:text-wolf-green font-medium">
+          </ScrollLink>
+          <ScrollLink 
+            to="about" 
+            smooth={true} 
+            duration={500} 
+            offset={-80} 
+            className="text-wolf-brown hover:text-wolf-green font-medium cursor-pointer"
+          >
             {t('about')}
-          </Link>
-          <Link to="/#products" className="text-wolf-brown hover:text-wolf-green font-medium">
+          </ScrollLink>
+          <ScrollLink 
+            to="products" 
+            smooth={true} 
+            duration={500} 
+            offset={-80} 
+            className="text-wolf-brown hover:text-wolf-green font-medium cursor-pointer"
+          >
             {t('products')}
-          </Link>
-          <Link to="/#contact" className="text-wolf-brown hover:text-wolf-green font-medium">
+          </ScrollLink>
+          <ScrollLink 
+            to="contact" 
+            smooth={true} 
+            duration={500} 
+            offset={-80} 
+            className="text-wolf-brown hover:text-wolf-green font-medium cursor-pointer"
+          >
             {t('contact')}
-          </Link>
+          </ScrollLink>
         </nav>
         
         <div className="hidden md:flex items-center">
@@ -82,34 +106,46 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <Link 
-              to="/#hero" 
-              className="text-wolf-brown hover:text-wolf-green font-medium py-2"
+            <ScrollLink 
+              to="hero" 
+              smooth={true} 
+              duration={500} 
+              offset={-80} 
+              className="text-wolf-brown hover:text-wolf-green font-medium py-2 cursor-pointer"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('home')}
-            </Link>
-            <Link 
-              to="/#about" 
-              className="text-wolf-brown hover:text-wolf-green font-medium py-2"
+            </ScrollLink>
+            <ScrollLink 
+              to="about" 
+              smooth={true} 
+              duration={500} 
+              offset={-80} 
+              className="text-wolf-brown hover:text-wolf-green font-medium py-2 cursor-pointer"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('about')}
-            </Link>
-            <Link 
-              to="/#products" 
-              className="text-wolf-brown hover:text-wolf-green font-medium py-2"
+            </ScrollLink>
+            <ScrollLink 
+              to="products" 
+              smooth={true} 
+              duration={500} 
+              offset={-80} 
+              className="text-wolf-brown hover:text-wolf-green font-medium py-2 cursor-pointer"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('products')}
-            </Link>
-            <Link 
-              to="/#contact" 
-              className="text-wolf-brown hover:text-wolf-green font-medium py-2"
+            </ScrollLink>
+            <ScrollLink 
+              to="contact" 
+              smooth={true} 
+              duration={500} 
+              offset={-80} 
+              className="text-wolf-brown hover:text-wolf-green font-medium py-2 cursor-pointer"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('contact')}
-            </Link>
+            </ScrollLink>
           </div>
         </div>
       )}
