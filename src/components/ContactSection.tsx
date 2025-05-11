@@ -243,7 +243,7 @@ const ContactSection = () => {
                 {/* LinkedIn Button */}
                 <a
                   href="https://www.linkedin.com/in/your-profile" // Replace with your LinkedIn profile URL
-                  className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center hover:bg-wolf-blue hover:text-white transition-colors"
+                  className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

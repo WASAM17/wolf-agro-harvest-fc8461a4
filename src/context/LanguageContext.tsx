@@ -22,9 +22,9 @@ const translations: Translations = {
     zh: '尼日尔农产品出口商' 
   },
   heroSubtitle: { 
-    fr: 'La puissance du loup au service de l\'agriculture nigérienne', 
-    en: 'The power of the wolf at the service of Nigerien agriculture', 
-    zh: '狼的力量服务于尼日尔农业' 
+    fr: 'Les trésors agricoles du Niger, accessibles partout dans le monde.', 
+    en: 'Niger’s agricultural treasures, within your reach anywhere in the world !', 
+    zh: '尼日尔的农业瑰宝，世界各地皆可触及。' 
   },
   discoverProducts: { fr: 'Découvrir nos produits', en: 'Discover our products', zh: '发现我们的产品' },
   contactUs: { fr: 'Nous contacter', en: 'Contact us', zh: '联系我们' },
