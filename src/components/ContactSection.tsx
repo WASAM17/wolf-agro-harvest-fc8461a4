@@ -240,7 +240,7 @@ const ContactSection = () => {
                   <FaWhatsapp />
                 </a>
 
-                {/* LinkedIn Button */}
+                {/* LinkedIn Button
                 <a
                   href="https://www.linkedin.com/in/your-profile" // Replace with your LinkedIn profile URL
                   className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
@@ -255,8 +255,8 @@ const ContactSection = () => {
                   >
                     <path d="M0 1.146C0 .513.324 0 .725 0h14.55c.401 0 .725.513.725 1.146v13.708c0 .633-.324 1.146-.725 1.146H.725A.723.723 0 0 1 0 14.854V1.146zm4.943 12.248V6.169H3.127v7.225h1.816zm-.91-8.212c.837 0 1.358-.554 1.358-1.248-.015-.71-.521-1.248-1.342-1.248-.821 0-1.358.538-1.358 1.248 0 .694.52 1.248 1.327 1.248h.015zm4.91 8.212V9.359c0-.216.016-.432.08-.586.176-.432.577-.88 1.25-.88.881 0 1.233.663 1.233 1.634v3.867h1.816V9.25c0-2.22-1.184-3.252-2.764-3.252-1.276 0-1.845.7-2.165 1.19v.026h-.015a5.58 5.58 0 0 1 .015-.026V6.169H6.989c.024.38 0 7.225 0 7.225h1.816z" />
                   </svg>
-                </a>
-              </div>
+                </a> */}
+              </div>g
             </div>
           </div>
         </div>

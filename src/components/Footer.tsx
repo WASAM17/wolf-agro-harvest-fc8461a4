@@ -111,7 +111,7 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-        </div>
+        </div>l
       </div>
     </footer>
   );
