@@ -16,13 +16,14 @@ const LanguageSwitcher = () => {
     <Select value={language} onValueChange={setLanguage}>
       <SelectTrigger className="w-[90px]">
         <SelectValue>
-          {language === 'fr' ? '🇫🇷 FR' : language === 'en' ? '🇬🇧 EN' : '🇨🇳 ZH'}
+          {language === 'fr' ? '🇫🇷 FR' : language === 'en' ? '🇬🇧 EN' : language === 'zh' ? '🇨🇳 ZH' : '🇩🇪 DE'}
         </SelectValue>
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="fr">🇫🇷 FR</SelectItem>
-        <SelectItem value="en">🇬🇧 EN</SelectItem>
-        <SelectItem value="zh">🇨🇳 ZH</SelectItem>
+        <SelectItem value="fr">🇫🇷 Frainçais</SelectItem>
+        <SelectItem value="en">🇬🇧 English</SelectItem>
+        <SelectItem value="zh">🇨🇳 中文</SelectItem>
+        <SelectItem value="de">🇩🇪 Deutsch</SelectItem>
       </SelectContent>
     </Select>
   );

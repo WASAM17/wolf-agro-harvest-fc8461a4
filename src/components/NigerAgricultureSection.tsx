@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Separator } from "@/components/ui/separator";
@@ -9,13 +8,15 @@ const NigerAgricultureSection = () => {
   const title = {
     fr: "L'agriculture au Niger",
     en: "Agriculture in Niger",
-    zh: "尼日尔农业"
+    zh: "尼日尔农业",
+    de: "Landwirtschaft in Niger"
   };
   
   const description = {
     fr: "Le Niger, situé au cœur de l'Afrique de l'Ouest, possède un riche patrimoine agricole malgré ses défis climatiques. Notre pays est reconnu pour la qualité exceptionnelle de ses produits agricoles, cultivés selon des méthodes traditionnelles respectueuses de l'environnement.",
     en: "Niger, located in the heart of West Africa, has a rich agricultural heritage despite its climatic challenges. Our country is recognized for the exceptional quality of its agricultural products, grown using traditional environmentally friendly methods.",
-    zh: "尼日尔位于西非中心，尽管面临气候挑战，但拥有丰富的农业遗产。我们的国家以其农产品的卓越品质而闻名，这些产品采用传统的环保方法种植。"
+    zh: "尼日尔位于西非中心，尽管面临气候挑战，但拥有丰富的农业遗产。我们的国家以其农产品的卓越品质而闻名，这些产品采用传统的环保方法种植。",
+    de: "Niger, im Herzen Westafrikas gelegen, verfügt trotz klimatischer Herausforderungen über ein reiches landwirtschaftliches Erbe. Unser Land ist bekannt für die außergewöhnliche Qualität seiner landwirtschaftlichen Produkte, die mit traditionellen umweltfreundlichen Methoden angebaut werden."
   };
   
   const farmingImages = [
@@ -43,7 +44,42 @@ const NigerAgricultureSection = () => {
       "代代相传的传统知识",
       "低化学投入使用，生产天然作物",
       "某些特定作物的理想气候条件"
+    ],
+    de: [
+      "Fruchtbare Böden in Tälern und Oasen",
+      "Vielfalt landwirtschaftlicher Zonen für verschiedene Kulturen",
+      "Traditionelles Know-how, von Generation zu Generation weitergegeben",
+      "Geringer Einsatz chemischer Inputs, Produktion natürlicher Kulturen",
+      "Ideale klimatische Bedingungen für bestimmte spezifische Kulturen"
     ]
+  };
+  
+  const whyChooseTitle = {
+    fr: "Pourquoi choisir les produits agricoles du Niger ?",
+    en: "Why choose agricultural products from Niger?",
+    zh: "为什么选择尼日尔的农产品？",
+    de: "Warum landwirtschaftliche Produkte aus Niger wählen?"
+  };
+  
+  const stats = {
+    population: {
+      fr: "de la population nigérienne travaille dans l'agriculture",
+      en: "of Niger's population works in agriculture",
+      zh: "尼日尔人口在农业领域工作",
+      de: "der nigrischen Bevölkerung arbeitet in der Landwirtschaft"
+    },
+    gdp: {
+      fr: "du PIB national provient du secteur agricole",
+      en: "of national GDP comes from the agricultural sector",
+      zh: "国内生产总值来自农业部门",
+      de: "des nationalen BIP stammt aus dem Agrarsektor"
+    },
+    countries: {
+      fr: "pays importent des produits agricoles nigériens",
+      en: "countries import Nigerien agricultural products",
+      zh: "国家进口尼日尔农产品",
+      de: "Länder importieren nigrische landwirtschaftliche Produkte"
+    }
   };
   
   const currentLang = language as keyof typeof title;
@@ -64,9 +100,7 @@ const NigerAgricultureSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
             <div className="order-2 md:order-1">
               <h3 className="text-2xl font-bold text-wolf-brown mb-4">
-                {currentLang === 'fr' ? "Pourquoi choisir les produits agricoles du Niger ?" : 
-                 currentLang === 'en' ? "Why choose agricultural products from Niger?" :
-                 "为什么选择尼日尔的农产品？"}
+                {whyChooseTitle[currentLang]}
               </h3>
               <ul className="space-y-3">
                 {agriculturalAdvantages[currentLang].map((advantage, index) => (
@@ -94,25 +128,19 @@ const NigerAgricultureSection = () => {
             <div className="bg-wolf-beige/30 p-6 rounded-lg">
               <div className="text-4xl font-bold text-wolf-green mb-2">80%</div>
               <p className="text-gray-700">
-                {currentLang === 'fr' ? "de la population nigérienne travaille dans l'agriculture" : 
-                 currentLang === 'en' ? "of Niger's population works in agriculture" :
-                 "尼日尔人口在农业领域工作"}
+                {stats.population[currentLang]}
               </p>
             </div>
             <div className="bg-wolf-beige/30 p-6 rounded-lg">
               <div className="text-4xl font-bold text-wolf-green mb-2">40%</div>
               <p className="text-gray-700">
-                {currentLang === 'fr' ? "du PIB national provient du secteur agricole" : 
-                 currentLang === 'en' ? "of national GDP comes from the agricultural sector" :
-                 "国内生产总值来自农业部门"}
+                {stats.gdp[currentLang]}
               </p>
             </div>
             <div className="bg-wolf-beige/30 p-6 rounded-lg">
               <div className="text-4xl font-bold text-wolf-green mb-2">15+</div>
               <p className="text-gray-700">
-                {currentLang === 'fr' ? "pays importent des produits agricoles nigériens" : 
-                 currentLang === 'en' ? "countries import Nigerien agricultural products" :
-                 "国家进口尼日尔农产品"}
+                {stats.countries[currentLang]}
               </p>
             </div>
           </div>
