@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"WhatsApp Image 2026-04-11 at 15.06.25.jpeg\" sorting.jpeg)",
+      "Bash(cp \"WhatsApp Image 2026-04-11 at 15.06.25 \\(1\\).jpeg\" workers.jpeg)",
+      "Bash(cp \"WhatsApp Image 2026-04-11 at 15.11.50.jpeg\" terrain.jpeg)",
+      "Bash(cp \"WhatsApp Image 2026-04-11 at 15.16.15.jpeg\" warehouse.jpeg)",
+      "Bash(ls *.jpeg)",
+      "Bash(sed -i 's|/lovable-uploads/WhatsApp Image 2026-04-11 at 15.06.25 \\(1\\).jpeg|/lovable-uploads/workers.jpeg|g' data/products.ts pages/About.tsx pages/Export.tsx pages/Gallery.tsx pages/Impact.tsx pages/Index.tsx pages/Quality.tsx)",
+      "Bash(sed -i 's|/lovable-uploads/WhatsApp Image 2026-04-11 at 15.06.25.jpeg|/lovable-uploads/sorting.jpeg|g' data/products.ts pages/About.tsx pages/Export.tsx pages/Gallery.tsx pages/Impact.tsx pages/Index.tsx pages/Quality.tsx)",
+      "Bash(sed -i 's|/lovable-uploads/WhatsApp Image 2026-04-11 at 15.11.50.jpeg|/lovable-uploads/terrain.jpeg|g' data/products.ts pages/About.tsx pages/Export.tsx pages/Gallery.tsx pages/Impact.tsx pages/Index.tsx pages/Quality.tsx)",
+      "Bash(sed -i 's|/lovable-uploads/WhatsApp Image 2026-04-11 at 15.16.15.jpeg|/lovable-uploads/warehouse.jpeg|g' data/products.ts pages/About.tsx pages/Export.tsx pages/Gallery.tsx pages/Impact.tsx pages/Index.tsx pages/Quality.tsx)",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(sed -i \"s|/lovable-uploads/terrain.jpeg|/lovable-uploads/agriculture-niger.jpeg|g\" Impact.tsx)",
+      "Bash(sed -i \"s|/lovable-uploads/sorting.jpeg|/lovable-uploads/agriculture-niger.jpeg|g\" Impact.tsx)"
+    ]
+  }
+}
