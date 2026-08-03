@@ -14,7 +14,8 @@
       "Bash(npx tsc:*)",
       "Bash(node_modules/.bin/tsc --noEmit)",
       "Bash(sed -i \"s|/lovable-uploads/terrain.jpeg|/lovable-uploads/agriculture-niger.jpeg|g\" Impact.tsx)",
-      "Bash(sed -i \"s|/lovable-uploads/sorting.jpeg|/lovable-uploads/agriculture-niger.jpeg|g\" Impact.tsx)"
+      "Bash(sed -i \"s|/lovable-uploads/sorting.jpeg|/lovable-uploads/agriculture-niger.jpeg|g\" Impact.tsx)",
+      "Bash(node -e \"require\\('./src/i18n/locales/fr.ts'\\)\")"
     ]
   }
 }
